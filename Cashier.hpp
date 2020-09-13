@@ -1,0 +1,44 @@
+/*********************************
+ *
+ * Renaud Déniel
+ *
+ *********************************/
+
+#ifndef __CASHIER_HPP
+#define __CASHIER_HPP
+
+#include <iostream>
+
+#include "Bank.hpp"
+#include "CashierRelease.hpp"
+#include "Client.hpp"
+
+class Bank;
+
+class Cashier{
+protected:
+    int number;
+    double averageServiceTime;
+    Client currentClient;
+    bool servingClient;
+    int clientNb;
+    double occupationTime;
+
+    Bank* bank;
+public:
+    Cashier();
+    explicit Cashier(double, int, Bank*);
+    ~Cashier();
+
+    double averageServiceTime();
+    int clientNb();
+    int number();
+
+    bool isFree();
+    void serve(Client);
+    void wait();
+
+    double occupationRate();
+};
+
+#endif
