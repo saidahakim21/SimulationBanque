@@ -19,25 +19,24 @@ void ClientArrival::process() {
     // Create client (using average time)
     Client client(time, bank);
 
-    Cashier* cashier = _bank->freeCashier();
+    Cashier* cashier = bank->getAvailableCashier();
     // If there isn't any free cashier, add client to the sortest queue
     if(cashier == nullptr) {
-        FileAttente* wl = _bank->shortestQueue();
-        wl->add(client);
-        cout << "New client waits at line " << wl->number() << endl;
+        bank->waitingList->add(client);
+        cout << "New client waits at line " << endl;
     }
     // Else, have the cashier serve the client
     else {
         // For stats at the end of the simulation
         bank->addWaitingTime(0);
 
-        cout << "New client served by " << cashier->number() << endl;
+        cout << "New client served by " << cashier->getNumber() << endl;
         cashier->serve(client); 
     }
 
     // Create next client arrival event if it doesn't exceed the expected time of the simulation
-    double nextTime = bank->time()+Poisson::next(bank->averageArrivalTime());
-    if(nextTime < bank->expectedTime()) {
+    double nextTime = bank->getTime()+Poisson::next(bank->averageArrivalTime());
+    if(nextTime < bank->getExpectedTime()) {
         ClientArrival *ca = new ClientArrival(nextTime, bank);
         bank->addEvent(ca);
     }

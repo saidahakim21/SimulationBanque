@@ -12,13 +12,17 @@
 
 #include "Event.hpp"
 
-/* Struct used to compare two events for the set of events */
+/* Struct used to compare two events for the set of events *//*
+
 struct EventComp {
     bool operator()(const Event* lhs, const Event* rhs) const  {
-        /* Events are compared using their execution time */
+        */
+/* Events are compared using their execution time *//*
+
         return (lhs->time() < rhs->time());
     }
 };
+*/
 
 struct eventElement {
     Event *event;

@@ -6,7 +6,6 @@
 
 #include "Queue.hpp"
 
-/* Constructor with no params for the init of the array in Bank */
 Queue::Queue() {
     nbClients = 0;
     currentClientsNb = 0;
@@ -30,7 +29,7 @@ Queue::Queue(Bank* bank)
 
 /* Add Client to Queue */
 void Queue::add(Client c) {
-    addToAverage();
+    //addToAverage(); Todo
 
     nbClients ++;
     if(nbClients > currentClientsNb) {
@@ -41,7 +40,7 @@ void Queue::add(Client c) {
 
 /* Remove the first waiting Client of the queue and returns it */
 Client Queue::removeFirst() {
-    addToAverage();
+    //addToAverage(); Todo
 
     nbClients --;
     Client c = clientList.front();
@@ -60,10 +59,10 @@ int Queue::size() {
 }
 
 /* Function to add (nb of client) * (time passed with his nb of clients) to the curren sum */
-void Queue::addToAverage() {
-    double timeDiff = bank->getTime() - lastModifTime;
+void Queue::addToAverage(double time) {
+    double timeDiff = time - lastModifTime;
     timeClientSum += nbClients * timeDiff;
-    lastModifTime = bank->getTime();
+    lastModifTime = time;
 }
 
 /* Returns the max length reached by the queue */
@@ -72,9 +71,7 @@ int Queue::getCurrentClientsNb() {
 }
 
 /* Returns the number of client waiting in average in the queue */
-double Queue::averageLength() {
-    addToAverage();
-    return timeClientSum / bank->getTime();
+double Queue::averageLength(double time) {
+    addToAverage(time);
+    return timeClientSum / time;
 }
-
-Queue::~Queue() {}

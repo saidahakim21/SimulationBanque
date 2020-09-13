@@ -21,13 +21,15 @@ class Cashier;
 class Bank: public SED {
 protected:
     double arrivalTimeInterval;
-    double _expectedTime;
-    int _cashierNb;
+    double expectedTime;
+    int cashierNb;
 
     Cashier* cashiers;
+    Queue waitingList;
+
 
     // Variable used to get stats about the simulation
-    std::vector<double> _waitingTimes;
+    std::vector<double> waitingTimes;
 
 public:
     Bank(double, double, int, double, double*);
@@ -36,9 +38,8 @@ public:
     void start() override;
 
     double averageArrivalTime();
-    double expectedTime();
-    int cashierNb();
-    Queue waitingList = new Queue(this);
+    double getExpectedTime();
+    int getCashierNb();
 
     Cashier* getAvailableCashier();
 

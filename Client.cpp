@@ -16,7 +16,7 @@ Client::Client(double arrivalTime, Bank* bank){
 }
 
 /* Returns arrival time of the client */
-double Client::arrivalTime() {
+double Client::getArrivalTime() {
     return arrivalTime;
 }
 

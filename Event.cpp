@@ -24,6 +24,6 @@ void Event::process() {
 }
 
 /* Returns the time of the event */
-double Event::time() const {
+double Event::getTime() const {
     return time;
 }

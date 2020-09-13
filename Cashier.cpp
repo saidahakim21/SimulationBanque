@@ -28,15 +28,15 @@ Cashier::Cashier(double averageTime, int n, Bank* b): currentClient(Client(-1, b
 
 Cashier::~Cashier() = default;
 
-double Cashier::averageServiceTime(){
+double Cashier::getAverageServiceTime(){
     return averageServiceTime;
 }
 
-int Cashier::clientNb(){
+int Cashier::getClientNb(){
     return clientNb;
 }
 
-int Cashier::number() {
+int Cashier::getNumber() {
     return number;
 }
 
@@ -56,14 +56,14 @@ void Cashier::serve(Client c) {
     occupationTime += duration;
 
     // Add event to stop serving the client
-    _bank->addEvent(new CashierRelease(eventTime, this, _number, c, _bank));
+    bank->addEvent(new CashierRelease(eventTime, this, number, c, bank));
 }
 
 void Cashier::wait() {
-    _servingClient = false;
-    _currentClient = Client(-1, nullptr);
+    servingClient = false;
+    currentClient = Client(-1, nullptr);
 }
 
 double Cashier::occupationRate() {
-    return (_occupationTime/_bank->getTime());
+    return (occupationTime/bank->getTime());
 }

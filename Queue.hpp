@@ -14,23 +14,22 @@ class Queue
         double lastModifTime;
         double timeClientSum;
         Bank* bank;
-
         std::deque<Client> clientList;
-
-        void addToAverage();
+        void addToAverage(double);
 
     public:
-        Queue();
-        Queue(Bank *bank);
-        ~Queue();
+        Queue(Bank* bank);
+
+    Queue();
+
+    ~Queue();
 
         void add(Client);
         bool isEmpty();
         int size();
         Client removeFirst();
-
         int getCurrentClientsNb();
-        double averageLength();
+        double averageLength(double);
 };
 
 #endif

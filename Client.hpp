@@ -16,7 +16,7 @@ protected:
 public:
     explicit Client(double, Bank*);
 
-    double arrivalTime();
+    double getArrivalTime();
 };
 
 #endif

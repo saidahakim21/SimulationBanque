@@ -30,9 +30,9 @@ public:
     explicit Cashier(double, int, Bank*);
     ~Cashier();
 
-    double averageServiceTime();
-    int clientNb();
-    int number();
+    double getAverageServiceTime();
+    int getClientNb();
+    int getNumber();
 
     bool isFree();
     void serve(Client);

@@ -14,6 +14,7 @@ Bank::Bank(double start, double expectedTime, int cashierNb, double averageArriv
 
     // Create cashiers and waiting lines
     cashiers = new Cashier[cashierNb];
+    waitingList = Queue(this);
 
     for(int i=0 ; i<cashierNb ; i++)
     {
@@ -28,7 +29,6 @@ Bank::Bank(double start, double expectedTime, int cashierNb, double averageArriv
 Bank::~Bank()
 {
     delete [] cashiers;
-    delete waitingList;
 }
 
 void Bank::start()
@@ -38,7 +38,7 @@ void Bank::start()
     {
         Event *e = eventsList->event;
         // Change the current time of the simulation to the time of the event
-        time = e->time();
+        time = e->getTime();
         cout << time << ":  \t";
         // Process event
         e->process();
@@ -52,12 +52,12 @@ double Bank::averageArrivalTime() {
 }
 
 /* Returns the expected time of the simulation */
-double Bank::expectedTime() {
+double Bank::getExpectedTime() {
     return expectedTime;
 }
 
 /* Returns the number of cashiers in the bank */
-int Bank::cashierNb() {
+int Bank::getCashierNb() {
     return cashierNb;
 }
 
@@ -85,7 +85,7 @@ double Bank::realDuration() {
 }
 
 void Bank::displayStats() {
-    cout << "=============\nResultats de la simulation:" << endl << endl;
+    /*cout << "=============\nResultats de la simulation:" << endl << endl;
 
     cout << "PARAMETRES D'ENTREE:" << endl;
     cout << "La simulation a une duree prevue de " << expectedTime << endl;
@@ -123,5 +123,5 @@ void Bank::displayStats() {
     cout << (sum/waitingTimes.size()) << " unites de temps" << endl << endl;
 
     cout << "] clients" << endl;
-    cout << "Soit un moyenne de " << (sum/cashierNb) << " clients, toutes files confondues" << endl;
+    cout << "Soit un moyenne de " << (sum/cashierNb) << " clients, toutes files confondues" << endl;*/
 }
