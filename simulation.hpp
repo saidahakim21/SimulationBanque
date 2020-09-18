@@ -15,7 +15,7 @@
 #include "Bank.hpp"
 #include "Event.hpp"
 
-void initServicesTimes(double min, double max, double** arr, int arrSize);
-void printStatistics(Bank);
+void genRandomDoubles(double min, double max, double** arr, int arrSize);
+void displayStats(Bank);
 
 #endif

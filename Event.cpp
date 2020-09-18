@@ -13,8 +13,8 @@
 - bank      pointer to the bank
 */
 Event::Event(double time, Bank* bank) {
-    time = time;
-    bank = bank;
+    _time = time;
+    _bank = bank;
 }
 
 /* Process of the event
@@ -24,6 +24,6 @@ void Event::process() {
 }
 
 /* Returns the time of the event */
-double Event::getTime() const {
-    return time;
+double Event::time() const {
+    return _time;
 }

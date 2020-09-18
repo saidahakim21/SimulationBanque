@@ -8,62 +8,62 @@
 
 using namespace std;
 
-Cashier::Cashier(): currentClient(Client(-1, nullptr)) {
-    number = -1;
-    averageServiceTime = -1;
-    clientNb = 0;
-    servingClient = false;
-    occupationTime = 0;
-    bank = nullptr;
+Cashier::Cashier(): _currentClient(Client(-1, nullptr)) {
+    _number = -1;
+    _averageServiceTime = -1;
+    _clientNb = 0;
+    _servingClient = false;
+    _occupationTime = 0;
+    _bank = nullptr;
 }
 
-Cashier::Cashier(double averageTime, int n, Bank* b): currentClient(Client(-1, b)) {
-    number = n;
-    averageServiceTime = averageTime;
-    clientNb = 0;
-    servingClient = false;
-    occupationTime = 0;
-    bank = b;
+Cashier::Cashier(double averageTime, int n, Bank* b): _currentClient(Client(-1, b)) {
+    _number = n;
+    _averageServiceTime = averageTime;
+    _clientNb = 0;
+    _servingClient = false;
+    _occupationTime = 0;
+    _bank = b;
 }
 
 Cashier::~Cashier() = default;
 
-double Cashier::getAverageServiceTime(){
-    return averageServiceTime;
+double Cashier::averageServiceTime(){
+    return _averageServiceTime;
 }
 
-int Cashier::getClientNb(){
-    return clientNb;
+int Cashier::clientNb(){
+    return _clientNb;
 }
 
-int Cashier::getNumber() {
-    return number;
+int Cashier::number() {
+    return _number;
 }
 
 bool Cashier::isFree() {
-    return !servingClient;
+    return !_servingClient;
 }
 
 void Cashier::serve(Client c) {
-    clientNb ++;
-    servingClient = true;
-    currentClient = c;
-    double duration = Poisson::next(averageServiceTime);
-    double eventTime = bank->getTime()+duration;
+    _clientNb ++;
+    _servingClient = true;
+    _currentClient = c;
+    double duration = Poisson::next(_averageServiceTime);
+    double eventTime = _bank->time()+duration;
 
     // For stats
-//    bank->addWaitingTime(duration);
-    occupationTime += duration;
+//    _bank->addWaitingTime(duration);
+    _occupationTime += duration;
 
     // Add event to stop serving the client
-    bank->addEvent(new CashierRelease(eventTime, this, number, c, bank));
+    _bank->addEvent(new CashierRelease(eventTime, this, _number, c, _bank));
 }
 
 void Cashier::wait() {
-    servingClient = false;
-    currentClient = Client(-1, nullptr);
+    _servingClient = false;
+    _currentClient = Client(-1, nullptr);
 }
 
 double Cashier::occupationRate() {
-    return (occupationTime/bank->getTime());
+    return (_occupationTime/_bank->time());
 }

@@ -11,12 +11,12 @@ class Bank;
 
 class Client {
 protected:
-    double arrivalTime;
-    Bank* bank;
+    double _arrivalTime;
+    Bank* _bank;
 public:
     explicit Client(double, Bank*);
 
-    double getArrivalTime();
+    double arrivalTime();
 };
 
 #endif

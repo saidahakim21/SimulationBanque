@@ -21,14 +21,14 @@
 class Poisson {
 
 public:
-  // permet d'avoir des resultats differents a chaque fois
-  // ou de forcer une meme serie aleatoire (param. seed)
-  static void init(int seed = 0) {
-    srandom(seed ? seed : getpid());
-  }
-  static double next(double moy = 1.0) {
-    return -log(((double)random()/RAND_MAX))*moy;
-  }
+    // permet d'avoir des resultats differents a chaque fois
+    // ou de forcer une meme serie aleatoire (param. seed)
+    static void init(int seed = 0) {
+        srandom(seed ? seed : getpid());
+    }
+    static double next(double moy = 1.0) {
+        return -log(((double)random()/RAND_MAX))*moy;
+    }
 };
 
 #endif

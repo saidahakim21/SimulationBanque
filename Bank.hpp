@@ -13,35 +13,37 @@
 
 #include "Cashier.hpp"
 #include "ClientArrival.hpp"
-#include "SED.hpp"
-#include "Queue.hpp"
+#include "DES.hpp"
+#include "WaitingList.hpp"
 
 class Cashier;
+class WaitingList;
 
-class Bank: public SED {
+class Bank: public DES {
 protected:
-    double arrivalTimeInterval;
-    double expectedTime;
-    int cashierNb;
+    double _averageArrivalTime;
+    double _expectedTime;
+    int _cashierNb;
 
-    Cashier* cashiers;
-    Queue waitingList;
-
+    Cashier* _cashiers;
+    WaitingList* _waitingLists;
 
     // Variable used to get stats about the simulation
-    std::vector<double> waitingTimes;
+    std::vector<double> _waitingTimes;
 
 public:
     Bank(double, double, int, double, double*);
     ~Bank() override;
 
-    void start() override;
+    void run() override;
 
     double averageArrivalTime();
-    double getExpectedTime();
-    int getCashierNb();
+    double expectedTime();
+    int cashierNb();
 
-    Cashier* getAvailableCashier();
+    Cashier* freeCashier();
+    WaitingList* waitingLists();
+    WaitingList* shortestQueue();
 
     void addWaitingTime(double);
     double realDuration();

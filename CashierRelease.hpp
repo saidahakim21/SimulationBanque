@@ -18,9 +18,9 @@ class Cashier;
 
 class CashierRelease: public Event {
 protected:
-    int number;
-    Cashier* cashier;
-    Client client;
+    int _number;
+    Cashier* _cashier;
+    Client _client;
 public:
     explicit CashierRelease(double, Cashier*, int, Client, Bank*);
     void process();

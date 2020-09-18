@@ -15,13 +15,13 @@ class Bank;
 
 class Event {
 protected:
-    Bank* bank;
-    double time;
+    Bank* _bank;
+    double _time;
 public:
     explicit Event(double, Bank*);
 
     virtual void process();
-    double getTime() const;
+    double time() const;
 //    bool operator<(const Event&) const;
 };
 
