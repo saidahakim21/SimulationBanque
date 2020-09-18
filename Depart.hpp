@@ -16,13 +16,16 @@
 
 class Cashier;
 
-class CashierRelease: public Event {
+class Depart: public Event {
 protected:
     int _number;
     Cashier* _cashier;
     Client _client;
 public:
-    explicit CashierRelease(double, Cashier*, int, Client, Bank*);
+    explicit Depart(double, Cashier*, int, Client, Bank*);
+    /**
+     * processing the event
+     */
     void process();
 };
 
