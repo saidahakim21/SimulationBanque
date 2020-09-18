@@ -16,16 +16,15 @@ using namespace std;
 - b     pointer to the Bank
 */
 CashierRelease::CashierRelease(double t, Cashier* ca, int n, Client cl, Bank* b): Event(t, b), _cashier(ca), _client(cl) {
-    _number = n;
 }
 
 /* Process of the CashierRelease event */
 void CashierRelease::process() {
     // If waiting list isn't empty
-    if(_bank->waitingLists()[_number].size()>0) {
+    if(_bank->waitingList()->size()>0) {
         cout << "Cashier " << _cashier->number() << " serves next client" << endl;
         // Take 1st client waiting in the right queue
-        Client c = _bank->waitingLists()[_number].removeFirst();
+        Client c = _bank->waitingList()->removeFirst();
 
         // Stats
         _bank->addWaitingTime(_bank->time() - c.arrivalTime());

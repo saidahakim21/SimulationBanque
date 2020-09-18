@@ -26,7 +26,7 @@ protected:
     int _cashierNb;
 
     Cashier* _cashiers;
-    WaitingList* _waitingLists;
+    WaitingList* _waitingList;
 
     // Variable used to get stats about the simulation
     std::vector<double> _waitingTimes;
@@ -42,8 +42,7 @@ public:
     int cashierNb();
 
     Cashier* freeCashier();
-    WaitingList* waitingLists();
-    WaitingList* shortestQueue();
+    WaitingList* waitingList();
 
     void addWaitingTime(double);
     double realDuration();

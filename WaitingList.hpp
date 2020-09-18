@@ -32,7 +32,7 @@ protected:
 
 public:
     WaitingList();
-    explicit WaitingList(int, Bank*);
+    explicit WaitingList(Bank*);
     ~WaitingList();
 
     void add(Client);
