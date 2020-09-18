@@ -16,6 +16,7 @@ using namespace std;
 - b     pointer to the Bank
 */
 CashierRelease::CashierRelease(double t, Cashier* ca, int n, Client cl, Bank* b): Event(t, b), _cashier(ca), _client(cl) {
+    _number = n;
 }
 
 /* Process of the CashierRelease event */
