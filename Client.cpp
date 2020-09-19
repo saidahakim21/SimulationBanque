@@ -1,22 +1,20 @@
-/*********************************
- *
- * Renaud Déniel
- *
- *********************************/
-
 #include "Client.hpp"
 
-/* Constructor with parameters:
-- arrivalTime       time of arrival of the client
-- bank              pointer to the Bank
-*/
-Client::Client(double arrivalTime, Bank* bank){
-    _arrivalTime = arrivalTime;
-    _bank = bank;
+/**
+ * Constructor for class Client
+ * @param aT       time of client's arrival
+ * @param b intance object of Bank
+ */
+Client::Client(double aT, Bank* b){
+    arrivalTime = aT;
+    bank = b;
 }
 
-/* Returns arrival time of the client */
-double Client::arrivalTime() {
-    return _arrivalTime;
+/**
+ * getter for arrival time of the client
+ * @return double
+ */
+double Client::getArrivalTime() {
+    return this->arrivalTime;
 }
 
