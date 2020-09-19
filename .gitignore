@@ -3,7 +3,7 @@
 ./*.o
 .idea/
 .idea/*
-./doc/html
+./doc/html/
 ./doc/html/*
 *.o
 ./*.o
