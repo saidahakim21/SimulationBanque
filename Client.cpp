@@ -10,13 +10,13 @@
 - arrivalTime       time of arrival of the client
 - bank              pointer to the Bank
 */
-Client::Client(double arrivalTime, Bank* bank){
-    _arrivalTime = arrivalTime;
-    _bank = bank;
+Client::Client(double aT, Bank* b){
+    arrivalTime = aT;
+    bank = b;
 }
 
 /* Returns arrival time of the client */
-double Client::arrivalTime() {
-    return _arrivalTime;
+double Client::getArrivalTime() {
+    return this->arrivalTime;
 }
 

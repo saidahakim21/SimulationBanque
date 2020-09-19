@@ -17,14 +17,14 @@ class Client;
 
 class WaitingList{
 protected:
-    int _number;
+    int number;
     int _currClients;
     int _maxClients;
 
     double _lastModifTime;
     double _timeClientSum;
 
-    Bank* _bank;
+    Bank* bank;
 
     std::deque<Client> _clientList;
 
@@ -39,7 +39,7 @@ public:
     bool isEmpty();
     int size();
     Client removeFirst();
-    int number();
+    int getNumber();
 
     int maxLength();
     double averageLength();

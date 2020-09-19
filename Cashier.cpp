@@ -1,69 +1,63 @@
-/*********************************
- *
- * Renaud Déniel
- *
- *********************************/
-
 #include "Cashier.hpp"
 
 using namespace std;
 
-Cashier::Cashier() : _currentClient(Client(-1, nullptr)) {
-    _number = -1;
-    _averageServiceTime = -1;
-    _clientNb = 0;
-    _servingClient = false;
-    _occupationTime = 0;
-    _bank = nullptr;
+Cashier::Cashier() : currentClient(Client(-1, nullptr)) {
+    number = -1;
+    averageServiceTime = -1;
+    clientNb = 0;
+    this->servingClient = false;
+    occupationTime = 0;
+    bank = nullptr;
 }
 
-Cashier::Cashier(double averageTime, int n, Bank *b) : _currentClient(Client(-1, b)) {
-    _number = n;
-    _averageServiceTime = averageTime;
-    _clientNb = 0;
-    _servingClient = false;
-    _occupationTime = 0;
-    _bank = b;
+Cashier::Cashier(double averageTime, int n, Bank *b) : currentClient(Client(-1, b)) {
+    number = n;
+    averageServiceTime = averageTime;
+    clientNb = 0;
+    servingClient = false;
+    occupationTime = 0;
+    bank = b;
 }
 
 Cashier::~Cashier() = default;
 
-double Cashier::averageServiceTime() {
-    return _averageServiceTime;
+double Cashier::getAverageServiceTime() {
+    return averageServiceTime;
 }
 
-int Cashier::clientNb() {
-    return _clientNb;
+int Cashier::getClientNb() {
+    return this->clientNb;
 }
 
-int Cashier::number() {
-    return _number;
+int Cashier::getNumber() {
+    return number;
 }
 
 bool Cashier::isFree() {
-    return !_servingClient;
+    return !this->servingClient;
 }
 
 void Cashier::serve(Client c) {
-    _clientNb++;
-    _servingClient = true;
-    _currentClient = c;
-    double duration = Poisson::next(_averageServiceTime);
-    double eventTime = _bank->time() + duration;
+    this->clientNb++;
+    this->servingClient = true;
+    this->currentClient = c;
+    double duration = Poisson::next(this->averageServiceTime);
+    double eventTime = bank->getTime() + duration;
 
     // For stats
-//    _bank->addWaitingTime(duration);
-    _occupationTime += duration;
+//    bank->addWaitingTime(duration);
+    this->occupationTime += duration;
 
     // Add event to stop serving the client
-    _bank->addEvent(new Depart(eventTime, this, _number, c, _bank));
+    bank->addEvent(new Depart(eventTime, this, this->number, c, bank));
 }
 
 void Cashier::wait() {
-    _servingClient = false;
-    _currentClient = Client(-1, nullptr);
+    this->servingClient = false;
+    this->currentClient = Client(-1, nullptr);
 }
 
-double Cashier::occupationRate() {
-    return (_occupationTime / _bank->time());
+double Cashier::getOccupationRate() {
+    return (this->occupationTime / bank->getTime());
 }

@@ -1,8 +1,3 @@
-/*********************************
- *
- * Renaud Déniel
- *
- *********************************/
 
 #ifndef __CASHIER_HPP
 #define __CASHIER_HPP
@@ -17,28 +12,28 @@ class Bank;
 
 class Cashier{
 protected:
-    int _number;
-    double _averageServiceTime;
-    Client _currentClient;
-    bool _servingClient;
-    int _clientNb;
-    double _occupationTime;
+    int number;
+    double averageServiceTime;
+    Client currentClient;
+    bool servingClient;
+    int clientNb;
+    double occupationTime;
 
-    Bank* _bank;
+    Bank* bank;
 public:
     Cashier();
     explicit Cashier(double, int, Bank*);
     ~Cashier();
 
-    double averageServiceTime();
-    int clientNb();
-    int number();
+    double getAverageServiceTime();
+    int getClientNb();
+    int getNumber();
 
     bool isFree();
     void serve(Client);
     void wait();
 
-    double occupationRate();
+    double getOccupationRate();
 };
 
 #endif

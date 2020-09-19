@@ -16,10 +16,10 @@ Bank::Bank(double start, double eT, int nbCashier, double averageAT, double* ave
     cashierNb = nbCashier;
     averageArrivalTime = averageAT;
 
-    _cashiers = new Cashier[this->cashierNb];
-    _waitingList = new WaitingList(this);
+    cashiers = new Cashier[this->cashierNb];
+    waitingList = new WaitingList(this);
     for(int i=0 ; i<this->cashierNb ; i++) {
-        _cashiers[i] = Cashier(averageST[i], i, this);
+        cashiers[i] = Cashier(averageST[i], i, this);
     }
 
     ClientArrival *ca = new ClientArrival(0.11111, this);
@@ -27,8 +27,8 @@ Bank::Bank(double start, double eT, int nbCashier, double averageAT, double* ave
 }
 
 Bank::~Bank() {
-    delete [] _cashiers;
-    delete _waitingList; 
+    delete [] cashiers;
+    delete waitingList;
 }
 
 void Bank::run() {
@@ -36,7 +36,7 @@ void Bank::run() {
     for(_eventIterator = _events.begin() ; _eventIterator != _events.end() ; ++_eventIterator) {
         Event *e = *_eventIterator;
         // increment time
-        _time = e->time();
+        _time = e->getTime();
         cout << _time << ":  \t";
         // process the event
         e->process();
@@ -58,20 +58,20 @@ int Bank::getCashierNb() {
 Cashier* Bank::freeCashier() {
     // Iterate through the cashiers, if one is free, return it
     for(int i=0 ; i < this->cashierNb ; i++) {
-        if(_cashiers[i].isFree()) {
-            return &(_cashiers[i]);
+        if(this->cashiers[i].isFree()) {
+            return &(this->cashiers[i]);
         }
     }
 
     return nullptr;
 }
 
-WaitingList* Bank::waitingList() {
-    return _waitingList;
+WaitingList* Bank::getWaitingList() {
+    return this->waitingList;
 }
 
 void Bank::addWaitingTime(double t) {
-    _waitingTimes.push_back(t);
+    this->waitingTimes.push_back(t);
 }
 
 double Bank::realDuration() {
@@ -85,7 +85,7 @@ void Bank::displayStats() {
     cout << "La simulation a une duree prevue de " << this->expectedTime << endl;
     cout << this->cashierNb << " caissiers servent les clients en moyenne sur une duree de : [ ";
     for(int i=0 ; i<this->cashierNb ; i++) {
-        cout << _cashiers[i].averageServiceTime() << " ";
+        cout << this->cashiers[i].getAverageServiceTime() << " ";
     }
     cout << "] (1 valeur pour chaque caissier)" << endl;
     cout << "Les clients arrivent en moyenne toutes les " << this->averageArrivalTime << " unites de temps" << endl << endl;
@@ -97,30 +97,30 @@ void Bank::displayStats() {
     // Cashier stats
     cout << "Les caissiers ont ete occupes [ ";
     for(int i=0 ; i<this->cashierNb ; i++) {
-        cout << _cashiers[i].occupationRate()*100 << " ";
+        cout << this->cashiers[i].getOccupationRate()*100 << " ";
     }
     cout << "] % de leur temps" << endl << endl;
 
     // Client stats
     cout << "[ ";
     for(int i=0 ; i<this->cashierNb ; i++) {
-        cout << _cashiers[i].clientNb() << " ";
+        cout << this->cashiers[i].getClientNb() << " ";
     }
     cout << "] clients ont ete servis sur la duree totale de la simulation" << endl;
-    cout << "Il y a donc eu " << _waitingTimes.size() << " clients servis au total" << endl;
+    cout << "Il y a donc eu " << this->waitingTimes.size() << " clients servis au total" << endl;
 
     cout << "Les clients ont attendu en moyenne ";
     double sum = 0;
-    for (vector<double>::iterator it = _waitingTimes.begin() ; it != _waitingTimes.end(); ++it) {
+    for (vector<double>::iterator it = this->waitingTimes.begin() ; it != this->waitingTimes.end(); ++it) {
         sum += *it;
     }
-    cout << (sum/_waitingTimes.size()) << " unites de temps" << endl << endl;
+    cout << (sum/this->waitingTimes.size()) << " unites de temps" << endl << endl;
 
     // Queue stats
     
     cout << "La taille maximale de la file d'attente [ ";
-    cout << waitingList()->maxLength() << "] " << endl;
+    cout << getWaitingList()->maxLength() << "] " << endl;
     
     cout << "La longeur maximale de la file d'attente [ ";
-    cout << waitingList()->averageLength() << "]" << endl;
+    cout << getWaitingList()->averageLength() << "]" << endl;
 }

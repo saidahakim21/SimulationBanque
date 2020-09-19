@@ -17,22 +17,22 @@ using namespace std;
  * @param b pointer to the bank
  */
 Depart::Depart(double t, Cashier* ca, int n, Client cl, Bank* b): Event(t, b), _cashier(ca), _client(cl) {
-    _number = n;
+    number = n;
 }
 
 void Depart::process() {
-    if(_bank->waitingList()[_number].size()>0) {
-        cout << "Cashier " << _cashier->number() << " serves next client" << endl;
+    if(this->bank->getWaitingList()[this->number].size()>0) {
+        cout << "Cashier " << _cashier->getNumber() << " serves next client" << endl;
         // pop the first client from waiting list
-        Client c = _bank->waitingList()[_number].removeFirst();
+        Client c = this->bank->getWaitingList()[this->number].removeFirst();
         //for the stats
-        _bank->addWaitingTime(_bank->time() - c.arrivalTime());
+        this->bank->addWaitingTime(this->bank->getTime() - c.getArrivalTime());
         // serving the client
         _cashier->serve(c);
     }
     // otherwise, cashier waits for a new client
     else {
-        cout << "Cashier " << _cashier->number() << " waits" << endl;
+        cout << "Cashier " << _cashier->getNumber() << " waits" << endl;
         _cashier->wait();
     }
 }

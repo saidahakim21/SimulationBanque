@@ -18,7 +18,7 @@ class Cashier;
 
 class Depart: public Event {
 protected:
-    int _number;
+    int number;
     Cashier* _cashier;
     Client _client;
 public:

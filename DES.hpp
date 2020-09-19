@@ -20,7 +20,7 @@ class Event;
 struct EventComp {
     bool operator()(const Event* lhs, const Event* rhs) const  {
         /* Events are compared using their execution time */
-        return (lhs->time() < rhs->time());
+        return (lhs->getTime() < rhs->getTime());
     }
 };
 
@@ -37,7 +37,7 @@ public:
 
     virtual void run();
     void addEvent(Event*);
-    double time();
+    double getTime();
 };
 
 #endif

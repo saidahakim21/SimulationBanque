@@ -25,12 +25,12 @@ protected:
     int cashierNb;
 
     /// a pointer to the cashiers
-    Cashier* _cashiers;
+    Cashier* cashiers;
     /// a poinnter to the waiting list
-    WaitingList* _waitingList;
+    WaitingList* waitingList;
 
     /// a vector for saving simulations stats
-    std::vector<double> _waitingTimes;
+    std::vector<double> waitingTimes;
 
 public:
     Bank(double, double, int, double, double*);
@@ -65,7 +65,7 @@ public:
      * getter for the waiting list
      * @return a pointer to WaitingList object
      */
-    WaitingList* waitingList();
+    WaitingList* getWaitingList();
 
     /**
      * adding a waiting time to the actual current time of the simulationn

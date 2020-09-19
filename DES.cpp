@@ -27,6 +27,6 @@ void DES::addEvent(Event* e) {
 }
 
 /* Returns the current time of the simulation */
-double DES::time() {
+double DES::getTime() {
     return _time;
 }

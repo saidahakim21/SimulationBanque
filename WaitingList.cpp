@@ -7,14 +7,14 @@
 #include "WaitingList.hpp"
 
 /* Constructor with the index in the array of waiting lists in Bank */
-WaitingList::WaitingList(Bank* bank) {
+WaitingList::WaitingList(Bank* b) {
     _currClients = 0;
     _maxClients = 0;
-//    _lastModifTime = bank->time();
+//    _lastModifTime = bank->getTime();
     _lastModifTime = 0;
     _timeClientSum = 0;
 
-    _bank = bank;
+    bank = b;
 }
 
 WaitingList::~WaitingList() = default;
@@ -51,15 +51,16 @@ int WaitingList::size() {
 }
 
 /* Returns the index of the queue in the Bank */
-int WaitingList::number() {
-    return _number;
+int WaitingList::getNumber()
+{
+    return this->number;
 }
 
 /* Function to add (nb of client) * (time passed with his nb of clients) to the curren sum */
 void WaitingList::addToAverage() {
-    double timeDiff = _bank->time() - _lastModifTime;
+    double timeDiff = bank->getTime() - _lastModifTime;
     _timeClientSum += _currClients*timeDiff;
-    _lastModifTime = _bank->time();
+    _lastModifTime = bank->getTime();
 }
 
 /* Returns the max length reached by the queue */
@@ -70,5 +71,5 @@ int WaitingList::maxLength() {
 /* Returns the number of client waiting in average in the queue */
 double WaitingList::averageLength() {
     addToAverage();
-    return _timeClientSum / _bank->time();
+    return _timeClientSum / bank->getTime();
 }
