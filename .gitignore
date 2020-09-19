@@ -3,3 +3,5 @@
 ./*.o
 .idea/
 .idea/*
+./doc/html
+./doc/html/*

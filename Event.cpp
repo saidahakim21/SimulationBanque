@@ -18,7 +18,7 @@ Event::Event(double time, Bank* bank) {
 }
 
 /* Process of the event
-Overridden by ClientArrival & CashierRelease
+Overridden by ClientArrival & Depart
 */
 void Event::process() {
 }

@@ -10,7 +10,7 @@
 #include <iostream>
 
 #include "Bank.hpp"
-#include "CashierRelease.hpp"
+#include "Depart.hpp"
 #include "Client.hpp"
 
 class Bank;

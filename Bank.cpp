@@ -1,9 +1,3 @@
-/*********************************
- *
- * Renaud Déniel et Vincent Monot
- *
- *********************************/
-
 #include "Bank.hpp"
 
 using namespace std;
