@@ -9,6 +9,9 @@
 
 class Bank;
 
+/**
+ * a class for the bank client.
+ */
 class Client {
 protected:
     double arrivalTime;

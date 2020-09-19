@@ -1,18 +1,14 @@
-/*********************************
- *
- * Vincent Monot
- *
- *********************************/
-
 #include "ClientArrival.hpp"
 
 using namespace std;
 
-/* Constructor with parameters:
-- t     time of the event
-- b     pointer to the bank
-*/
-ClientArrival::ClientArrival(double t, Bank* b): Event(t, b) {}
+
+/**
+ *
+ * @param t
+ * @param b
+ */
+ ClientArrival::ClientArrival(double t, Bank* b): Event(t, b) {}
 
 /* Process of the client arrival event */
 void ClientArrival::process() {
