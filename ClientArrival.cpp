@@ -20,9 +20,9 @@ void ClientArrival::process() {
     Client client(_time, _bank);
 
     Cashier* cashier = _bank->freeCashier();
-    // If there isn't any free cashier, add client to the sortest queue
+    // If there isn't any free cashier, add client to the queue
     if(cashier == nullptr) {
-        WaitingList* wl = _bank->shortestQueue();
+        WaitingList* wl = _bank->waitingList();
         wl->add(client);
         cout << "New client waits at line " << wl->number() << endl;
     }

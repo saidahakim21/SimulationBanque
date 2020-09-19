@@ -6,19 +6,8 @@
 
 #include "WaitingList.hpp"
 
-/* Constructor with no params for the init of the array in Bank */
-WaitingList::WaitingList() {
-    _number = -1;
-    _currClients = 0;
-    _maxClients = 0;
-    _lastModifTime = 0;
-    _timeClientSum = 0;
-
-    _bank = nullptr;
-}
-
 /* Constructor with the index in the array of waiting lists in Bank */
-WaitingList::WaitingList(int n, Bank* bank): _number(n) {
+WaitingList::WaitingList(Bank* bank) {
     _currClients = 0;
     _maxClients = 0;
 //    _lastModifTime = bank->time();
