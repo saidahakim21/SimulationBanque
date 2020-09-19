@@ -15,12 +15,12 @@ Depart::Depart(double t, Cashier* ca, int n, Client cl, Bank* b): Event(t, b), _
 }
 
 void Depart::process() {
-    if(this->bank->getWaitingList()[this->number].size()>0) {
+    if(bank->getWaitingList()[number].size()>0) {
         cout << "Cashier " << _cashier->getNumber() << " serves next client" << endl;
         // pop the first client from waiting list
-        Client c = this->bank->getWaitingList()[this->number].removeFirst();
+        Client c = bank->getWaitingList()[number].removeFirst();
         //for the stats
-        this->bank->addWaitingTime(this->bank->getTime() - c.getArrivalTime());
+        bank->addWaitingTime(bank->getTime() - c.getArrivalTime());
         // serving the client
         _cashier->serve(c);
     }

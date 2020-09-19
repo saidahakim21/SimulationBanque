@@ -16,9 +16,9 @@ Bank::Bank(double start, double eT, int nbCashier, double averageAT, double* ave
     cashierNb = nbCashier;
     averageArrivalTime = averageAT;
 
-    cashiers = new Cashier[this->cashierNb];
+    cashiers = new Cashier[cashierNb];
     waitingList = new WaitingList(this);
-    for(int i=0 ; i<this->cashierNb ; i++) {
+    for(int i=0 ; i<cashierNb ; i++) {
         cashiers[i] = Cashier(averageST[i], i, this);
     }
 
@@ -44,22 +44,22 @@ void Bank::run() {
 }
 
 double Bank::getAverageArrivalTime() {
-    return this->averageArrivalTime;
+    return averageArrivalTime;
 }
 
 double Bank::getExpectedTime() {
-    return this->expectedTime;
+    return expectedTime;
 }
 
 int Bank::getCashierNb() {
-    return this->cashierNb;
+    return cashierNb;
 }
 
 Cashier* Bank::freeCashier() {
     // Iterate through the cashiers, if one is free, return it
-    for(int i=0 ; i < this->cashierNb ; i++) {
-        if(this->cashiers[i].isFree()) {
-            return &(this->cashiers[i]);
+    for(int i=0 ; i < cashierNb ; i++) {
+        if(cashiers[i].isFree()) {
+            return &(cashiers[i]);
         }
     }
 
@@ -67,11 +67,11 @@ Cashier* Bank::freeCashier() {
 }
 
 WaitingList* Bank::getWaitingList() {
-    return this->waitingList;
+    return waitingList;
 }
 
 void Bank::addWaitingTime(double t) {
-    this->waitingTimes.push_back(t);
+    waitingTimes.push_back(t);
 }
 
 double Bank::realDuration() {
@@ -82,13 +82,13 @@ void Bank::displayStats() {
     cout << "=============\nResultats de la simulation:" << endl << endl;
 
     cout << "PARAMETRES D'ENTREE:" << endl;
-    cout << "La simulation a une duree prevue de " << this->expectedTime << endl;
-    cout << this->cashierNb << " caissiers servent les clients en moyenne sur une duree de : [ ";
-    for(int i=0 ; i<this->cashierNb ; i++) {
-        cout << this->cashiers[i].getAverageServiceTime() << " ";
+    cout << "La simulation a une duree prevue de " << expectedTime << endl;
+    cout << cashierNb << " caissiers servent les clients en moyenne sur une duree de : [ ";
+    for(int i=0 ; i<cashierNb ; i++) {
+        cout << cashiers[i].getAverageServiceTime() << " ";
     }
     cout << "] (1 valeur pour chaque caissier)" << endl;
-    cout << "Les clients arrivent en moyenne toutes les " << this->averageArrivalTime << " unites de temps" << endl << endl;
+    cout << "Les clients arrivent en moyenne toutes les " << averageArrivalTime << " unites de temps" << endl << endl;
 
     // Simulation stats
     cout << "RESULTATS EN SORTIE:" << endl;
@@ -96,25 +96,25 @@ void Bank::displayStats() {
 
     // Cashier stats
     cout << "Les caissiers ont ete occupes [ ";
-    for(int i=0 ; i<this->cashierNb ; i++) {
-        cout << this->cashiers[i].getOccupationRate()*100 << " ";
+    for(int i=0 ; i<cashierNb ; i++) {
+        cout << cashiers[i].getOccupationRate()*100 << " ";
     }
     cout << "] % de leur temps" << endl << endl;
 
     // Client stats
     cout << "[ ";
-    for(int i=0 ; i<this->cashierNb ; i++) {
-        cout << this->cashiers[i].getClientNb() << " ";
+    for(int i=0 ; i<cashierNb ; i++) {
+        cout << cashiers[i].getClientNb() << " ";
     }
     cout << "] clients ont ete servis sur la duree totale de la simulation" << endl;
-    cout << "Il y a donc eu " << this->waitingTimes.size() << " clients servis au total" << endl;
+    cout << "Il y a donc eu " << waitingTimes.size() << " clients servis au total" << endl;
 
     cout << "Les clients ont attendu en moyenne ";
     double sum = 0;
-    for (vector<double>::iterator it = this->waitingTimes.begin() ; it != this->waitingTimes.end(); ++it) {
+    for (vector<double>::iterator it = waitingTimes.begin() ; it != waitingTimes.end(); ++it) {
         sum += *it;
     }
-    cout << (sum/this->waitingTimes.size()) << " unites de temps" << endl << endl;
+    cout << (sum/waitingTimes.size()) << " unites de temps" << endl << endl;
 
     // Queue stats
     

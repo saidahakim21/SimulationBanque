@@ -15,6 +15,6 @@ Client::Client(double aT, Bank* b){
  * @return double
  */
 double Client::getArrivalTime() {
-    return this->arrivalTime;
+    return arrivalTime;
 }
 

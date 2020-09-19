@@ -48,7 +48,7 @@ int WaitingList::size() {
 /* Returns the index of the queue in the Bank */
 int WaitingList::getNumber()
 {
-    return this->number;
+    return number;
 }
 
 /* Function to add (nb of client) * (time passed with his nb of clients) to the curren sum */

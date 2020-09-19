@@ -12,9 +12,9 @@
 - time      time of the execution of the event
 - bank      pointer to the bank
 */
-Event::Event(double t, Bank* bank) {
+Event::Event(double t, Bank* b) {
     time = t;
-    this->bank = bank;
+    bank = b;
 }
 
 /* Process of the event
@@ -25,5 +25,5 @@ void Event::process() {
 
 /* Returns the time of the event */
 double Event::getTime() const {
-    return this->time;
+    return time;
 }
