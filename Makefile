@@ -12,10 +12,10 @@ else
 	LD_FLAGS = 
 endif
 
-all: simulation
+all: program
 
-simulation: $(OBJ)
-	c++ $(CC_FLAGS) $(LD_FLAGS) $(OBJ) -o simulation.out
+program: $(OBJ)
+	c++ $(CC_FLAGS) $(LD_FLAGS) $(OBJ) -o program.out
 
 %.o: %.cpp %.hpp
 	c++ $(CC_FLAGS) $(LD_FLAGS) -c $< -o $@
