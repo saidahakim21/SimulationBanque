@@ -36,8 +36,8 @@ void ClientArrival::process() {
     }
 
     // Create next client arrival event if it doesn't exceed the expected time of the simulation
-    double nextTime = _bank->time()+Poisson::next(_bank->averageArrivalTime());
-    if(nextTime < _bank->expectedTime()) {
+    double nextTime = _bank->time()+Poisson::next(_bank->getAverageArrivalTime());
+    if(nextTime < _bank->getExpectedTime()) {
         ClientArrival *ca = new ClientArrival(nextTime, _bank);
         _bank->addEvent(ca);
     }
