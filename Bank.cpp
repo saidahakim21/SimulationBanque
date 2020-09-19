@@ -11,7 +11,7 @@ using namespace std;
  * @param averageST average time of service per Client
  */
 Bank::Bank(double start, double eT, int nbCashier, double averageAT, double* averageST)
-    : DES(start) {
+    : SED(start) {
     expectedTime = eT;
     cashierNb = nbCashier;
     averageArrivalTime = averageAT;
@@ -22,7 +22,7 @@ Bank::Bank(double start, double eT, int nbCashier, double averageAT, double* ave
         cashiers[i] = Cashier(averageST[i], i, this);
     }
 
-    ClientArrival *ca = new ClientArrival(0.11111, this);
+    Arrive *ca = new Arrive(0.11111, this);
     addEvent(ca);
 }
 
@@ -33,8 +33,8 @@ Bank::~Bank() {
 
 void Bank::run() {
     // iterate over generated Events using poisson suite
-    for(_eventIterator = _events.begin() ; _eventIterator != _events.end() ; ++_eventIterator) {
-        Event *e = *_eventIterator;
+    for(eventIterator = events.begin() ; eventIterator != events.end() ; ++eventIterator) {
+        Event *e = *eventIterator;
         // increment time
         _time = e->getTime();
         cout << _time << ":  \t";

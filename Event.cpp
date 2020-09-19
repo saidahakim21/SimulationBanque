@@ -1,24 +1,19 @@
-/*********************************
- *
- * Vincent Monot
- *
- *********************************/
-
 #include "Event.hpp"
 
 #include <iostream>
 
-/* Constructor of Event with params:
-- time      time of the execution of the event
-- bank      pointer to the bank
-*/
+/**
+ * Constructor of Event
+ * @param t
+ * @param b
+ */
 Event::Event(double t, Bank* b) {
     time = t;
     bank = b;
 }
 
 /* Process of the event
-Overridden by ClientArrival & Depart
+Overridden by Arrive & Depart
 */
 void Event::process() {
 }

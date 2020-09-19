@@ -6,8 +6,8 @@
 #include <vector>
 
 #include "Cashier.hpp"
-#include "ClientArrival.hpp"
-#include "DES.hpp"
+#include "Arrive.hpp"
+#include "SED.hpp"
 #include "WaitingList.hpp"
 
 class Cashier;
@@ -15,7 +15,7 @@ class WaitingList;
 /**
  * A class for a bank illustration.
  */
-class Bank: public DES {
+class Bank: public SED {
 protected:
     /// the average time until next client arrival
     double averageArrivalTime;

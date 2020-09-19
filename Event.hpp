@@ -1,4 +1,3 @@
-
 #ifndef __EVENT_HPP
 #define __EVENT_HPP
 
@@ -7,7 +6,9 @@
 using namespace std;
 
 class Bank;
-
+/**
+ * a class of an event, holds attributes about the object
+ */
 class Event {
 protected:
     Bank* bank;

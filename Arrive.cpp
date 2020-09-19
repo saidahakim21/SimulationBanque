@@ -1,17 +1,16 @@
-#include "ClientArrival.hpp"
+#include "Arrive.hpp"
 
 using namespace std;
 
 
 /**
- *
- * @param t
- * @param b
+ * constructor for Arrive class
+ * @param t time of arrival Event
+ * @param b instance of Bank
  */
- ClientArrival::ClientArrival(double t, Bank* b): Event(t, b) {}
+ Arrive::Arrive(double t, Bank* b): Event(t, b) {}
 
-/* Process of the client arrival event */
-void ClientArrival::process() {
+void Arrive::process() {
     // Create client (using average time)
     Client client(time, bank);
 
@@ -34,7 +33,7 @@ void ClientArrival::process() {
     // Create next client arrival event if it doesn't exceed the expected time of the simulation
     double nextTime = bank->getTime()+Poisson::next(bank->getAverageArrivalTime());
     if(nextTime < bank->getExpectedTime()) {
-        ClientArrival *ca = new ClientArrival(nextTime, bank);
+        Arrive *ca = new Arrive(nextTime, bank);
         bank->addEvent(ca);
     }
 }

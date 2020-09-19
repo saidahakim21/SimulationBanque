@@ -1,27 +1,27 @@
 
-#include "DES.hpp"
+#include "SED.hpp"
 
-/* Constructor of DES:
+/* Constructor of SED:
 - start     starting time of the simulation
 */
-DES::DES(double start) {
+SED::SED(double start) {
     _time = start;
 }
 
-DES::~DES() {
-    _events.clear();
+SED::~SED() {
+    events.clear();
 }
 
 /* Overriden by Bank */
-void DES::run() {
+void SED::run() {
 }
 
 /* Add event to set of events */
-void DES::addEvent(Event* e) {
-    _events.insert(e);
+void SED::addEvent(Event* e) {
+    events.insert(e);
 }
 
 /* Returns the current time of the simulation */
-double DES::getTime() {
+double SED::getTime() {
     return _time;
 }

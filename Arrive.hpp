@@ -1,9 +1,3 @@
-/*********************************
- *
- * Vincent Monot
- *
- *********************************/
-
 #ifndef __CLIENT_ARRIVAL_HPP
 #define __CLIENT_ARRIVAL_HPP
 
@@ -14,9 +8,12 @@
 #include "Client.hpp"
 #include "Event.hpp"
 
-class ClientArrival: public Event {
+/**
+ * a class of new client arrival, extends Event
+ */
+class Arrive: public Event {
 public:
-    explicit ClientArrival(double, Bank*);
+    explicit Arrive(double, Bank*);
     void process() override;
 };
 

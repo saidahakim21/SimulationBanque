@@ -1,6 +1,6 @@
 /*********************************
  *
- * Renaud Déniel et Vincent Monot
+ * Renaud Déniel et
  *
  *********************************/
 
@@ -15,12 +15,15 @@
 #include "Bank.hpp"
 #include "Event.hpp"
 
+/**
+ * a class that illustrate the simulation
+ */
 class Simulation{
     protected: 
-        double _expectedTime;
-        int _cashierNb;
-        double _averageArrivalTime;
-        double* _averageServiceTimes;
+        double expectedTime;
+        int cashierNb;
+        double averageArrivalTime;
+        double* averageArrivalTime;
     public:
         //Simulation();
         explicit Simulation(int, double, double, double*);

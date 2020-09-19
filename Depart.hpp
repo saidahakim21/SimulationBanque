@@ -9,6 +9,9 @@
 
 class Cashier;
 
+/**
+ * a class of a client depart event, extends Event
+ */
 class Depart: public Event {
 protected:
     int number;
