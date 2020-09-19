@@ -1,0 +1,168 @@
+\hypertarget{classWaitingList}{}\doxysection{Waiting\+List Class Reference}
+\label{classWaitingList}\index{WaitingList@{WaitingList}}
+
+
+{\ttfamily \#include $<$Waiting\+List.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWaitingList_a054ceb8da1b8f8741e22147f01ad02fa}{Waiting\+List}} ()
+\item 
+\mbox{\hyperlink{classWaitingList_ab81591a6efc68a7e3a123333195c2b72}{Waiting\+List}} (\mbox{\hyperlink{classBank}{Bank}} $\ast$)
+\item 
+\mbox{\hyperlink{classWaitingList_a487234c800487e1b5e87653b413f149f}{$\sim$\+Waiting\+List}} ()
+\item 
+void \mbox{\hyperlink{classWaitingList_a962e1c10ad96acfa96aecac44b80f2b5}{add}} (\mbox{\hyperlink{classClient}{Client}})
+\item 
+bool \mbox{\hyperlink{classWaitingList_a3e853ca8e68611f22829993b250522e3}{is\+Empty}} ()
+\item 
+int \mbox{\hyperlink{classWaitingList_a4e4bd5339df2f68ea4793f9fa249492a}{size}} ()
+\item 
+\mbox{\hyperlink{classClient}{Client}} \mbox{\hyperlink{classWaitingList_a00828d7d703283e26aa25d6814207fd3}{remove\+First}} ()
+\item 
+int \mbox{\hyperlink{classWaitingList_a88f9eee944d05eca2bfc2c5fb20c5b7f}{get\+Number}} ()
+\item 
+int \mbox{\hyperlink{classWaitingList_a02bf17b827e9ec0d1208bb97f76403f5}{max\+Length}} ()
+\item 
+double \mbox{\hyperlink{classWaitingList_a8d1042e609b222dc83b5e68d812bb354}{average\+Length}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classWaitingList_aeed4dff037001a8a9558857f83ef0142}{add\+To\+Average}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classWaitingList_aad786fcf9ca1a6cb13f348ad01680d6b}{number}}
+\item 
+int \mbox{\hyperlink{classWaitingList_aad83f0b2900776bf5c452efd53135517}{\+\_\+curr\+Clients}}
+\item 
+int \mbox{\hyperlink{classWaitingList_af937adc91cca1e37f244d21cbb779270}{\+\_\+max\+Clients}}
+\item 
+double \mbox{\hyperlink{classWaitingList_a9c91a42f697dd6d6851d74821120fea3}{\+\_\+last\+Modif\+Time}}
+\item 
+double \mbox{\hyperlink{classWaitingList_a79f8b1fe43a7e1252f829865f60bbfe9}{\+\_\+time\+Client\+Sum}}
+\item 
+\mbox{\hyperlink{classBank}{Bank}} $\ast$ \mbox{\hyperlink{classWaitingList_af5b3c1110db151c90495169c18506616}{bank}}
+\item 
+std\+::deque$<$ \mbox{\hyperlink{classClient}{Client}} $>$ \mbox{\hyperlink{classWaitingList_a428792a6a301d796a0cf0b4cd9a1f80c}{\+\_\+client\+List}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWaitingList_a054ceb8da1b8f8741e22147f01ad02fa}\label{classWaitingList_a054ceb8da1b8f8741e22147f01ad02fa}} 
+\index{WaitingList@{WaitingList}!WaitingList@{WaitingList}}
+\index{WaitingList@{WaitingList}!WaitingList@{WaitingList}}
+\doxysubsubsection{\texorpdfstring{WaitingList()}{WaitingList()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Waiting\+List\+::\+Waiting\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classWaitingList_ab81591a6efc68a7e3a123333195c2b72}\label{classWaitingList_ab81591a6efc68a7e3a123333195c2b72}} 
+\index{WaitingList@{WaitingList}!WaitingList@{WaitingList}}
+\index{WaitingList@{WaitingList}!WaitingList@{WaitingList}}
+\doxysubsubsection{\texorpdfstring{WaitingList()}{WaitingList()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Waiting\+List\+::\+Waiting\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBank}{Bank}} $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classWaitingList_a487234c800487e1b5e87653b413f149f}\label{classWaitingList_a487234c800487e1b5e87653b413f149f}} 
+\index{WaitingList@{WaitingList}!````~WaitingList@{$\sim$WaitingList}}
+\index{````~WaitingList@{$\sim$WaitingList}!WaitingList@{WaitingList}}
+\doxysubsubsection{\texorpdfstring{$\sim$WaitingList()}{~WaitingList()}}
+{\footnotesize\ttfamily Waiting\+List\+::$\sim$\+Waiting\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWaitingList_a962e1c10ad96acfa96aecac44b80f2b5}\label{classWaitingList_a962e1c10ad96acfa96aecac44b80f2b5}} 
+\index{WaitingList@{WaitingList}!add@{add}}
+\index{add@{add}!WaitingList@{WaitingList}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void Waiting\+List\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classClient}{Client}}}]{c }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classWaitingList_aeed4dff037001a8a9558857f83ef0142}\label{classWaitingList_aeed4dff037001a8a9558857f83ef0142}} 
+\index{WaitingList@{WaitingList}!addToAverage@{addToAverage}}
+\index{addToAverage@{addToAverage}!WaitingList@{WaitingList}}
+\doxysubsubsection{\texorpdfstring{addToAverage()}{addToAverage()}}
+{\footnotesize\ttfamily void Waiting\+List\+::add\+To\+Average (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classWaitingList_a8d1042e609b222dc83b5e68d812bb354}\label{classWaitingList_a8d1042e609b222dc83b5e68d812bb354}} 
+\index{WaitingList@{WaitingList}!averageLength@{averageLength}}
+\index{averageLength@{averageLength}!WaitingList@{WaitingList}}
+\doxysubsubsection{\texorpdfstring{averageLength()}{averageLength()}}
+{\footnotesize\ttfamily double Waiting\+List\+::average\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classWaitingList_a88f9eee944d05eca2bfc2c5fb20c5b7f}\label{classWaitingList_a88f9eee944d05eca2bfc2c5fb20c5b7f}} 
+\index{WaitingList@{WaitingList}!getNumber@{getNumber}}
+\index{getNumber@{getNumber}!WaitingList@{WaitingList}}
+\doxysubsubsection{\texorpdfstring{getNumber()}{getNumber()}}
+{\footnotesize\ttfamily int Waiting\+List\+::get\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classWaitingList_a3e853ca8e68611f22829993b250522e3}\label{classWaitingList_a3e853ca8e68611f22829993b250522e3}} 
+\index{WaitingList@{WaitingList}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!WaitingList@{WaitingList}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily bool Waiting\+List\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classWaitingList_a02bf17b827e9ec0d1208bb97f76403f5}\label{classWaitingList_a02bf17b827e9ec0d1208bb97f76403f5}} 
+\index{WaitingList@{WaitingList}!maxLength@{maxLength}}
+\index{maxLength@{maxLength}!WaitingList@{WaitingList}}
+\doxysubsubsection{\texorpdfstring{maxLength()}{maxLength()}}
+{\footnotesize\ttfamily int Waiting\+List\+::max\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classWaitingList_a00828d7d703283e26aa25d6814207fd3}\label{classWaitingList_a00828d7d703283e26aa25d6814207fd3}} 
+\index{WaitingList@{WaitingList}!removeFirst@{removeFirst}}
+\index{removeFirst@{removeFirst}!WaitingList@{WaitingList}}
+\doxysubsubsection{\texorpdfstring{removeFirst()}{removeFirst()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classClient}{Client}} Waiting\+List\+::remove\+First (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classWaitingList_a4e4bd5339df2f68ea4793f9fa249492a}\label{classWaitingList_a4e4bd5339df2f68ea4793f9fa249492a}} 
+\index{WaitingList@{WaitingList}!size@{size}}
+\index{size@{size}!WaitingList@{WaitingList}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily int Waiting\+List\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classWaitingList_a428792a6a301d796a0cf0b4cd9a1f80c}\label{classWaitingList_a428792a6a301d796a0cf0b4cd9a1f80c}} 
+\index{WaitingList@{WaitingList}!\_clientList@{\_clientList}}
+\index{\_clientList@{\_clientList}!WaitingList@{WaitingList}}
+\doxysubsubsection{\texorpdfstring{\_clientList}{\_clientList}}
+{\footnotesize\ttfamily std\+::deque$<$\mbox{\hyperlink{classClient}{Client}}$>$ Waiting\+List\+::\+\_\+client\+List\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classWaitingList_aad83f0b2900776bf5c452efd53135517}\label{classWaitingList_aad83f0b2900776bf5c452efd53135517}} 
+\index{WaitingList@{WaitingList}!\_currClients@{\_currClients}}
+\index{\_currClients@{\_currClients}!WaitingList@{WaitingList}}
+\doxysubsubsection{\texorpdfstring{\_currClients}{\_currClients}}
+{\footnotesize\ttfamily int Waiting\+List\+::\+\_\+curr\+Clients\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classWaitingList_a9c91a42f697dd6d6851d74821120fea3}\label{classWaitingList_a9c91a42f697dd6d6851d74821120fea3}} 
+\index{WaitingList@{WaitingList}!\_lastModifTime@{\_lastModifTime}}
+\index{\_lastModifTime@{\_lastModifTime}!WaitingList@{WaitingList}}
+\doxysubsubsection{\texorpdfstring{\_lastModifTime}{\_lastModifTime}}
+{\footnotesize\ttfamily double Waiting\+List\+::\+\_\+last\+Modif\+Time\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classWaitingList_af937adc91cca1e37f244d21cbb779270}\label{classWaitingList_af937adc91cca1e37f244d21cbb779270}} 
+\index{WaitingList@{WaitingList}!\_maxClients@{\_maxClients}}
+\index{\_maxClients@{\_maxClients}!WaitingList@{WaitingList}}
+\doxysubsubsection{\texorpdfstring{\_maxClients}{\_maxClients}}
+{\footnotesize\ttfamily int Waiting\+List\+::\+\_\+max\+Clients\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classWaitingList_a79f8b1fe43a7e1252f829865f60bbfe9}\label{classWaitingList_a79f8b1fe43a7e1252f829865f60bbfe9}} 
+\index{WaitingList@{WaitingList}!\_timeClientSum@{\_timeClientSum}}
+\index{\_timeClientSum@{\_timeClientSum}!WaitingList@{WaitingList}}
+\doxysubsubsection{\texorpdfstring{\_timeClientSum}{\_timeClientSum}}
+{\footnotesize\ttfamily double Waiting\+List\+::\+\_\+time\+Client\+Sum\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classWaitingList_af5b3c1110db151c90495169c18506616}\label{classWaitingList_af5b3c1110db151c90495169c18506616}} 
+\index{WaitingList@{WaitingList}!bank@{bank}}
+\index{bank@{bank}!WaitingList@{WaitingList}}
+\doxysubsubsection{\texorpdfstring{bank}{bank}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBank}{Bank}}$\ast$ Waiting\+List\+::bank\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classWaitingList_aad786fcf9ca1a6cb13f348ad01680d6b}\label{classWaitingList_aad786fcf9ca1a6cb13f348ad01680d6b}} 
+\index{WaitingList@{WaitingList}!number@{number}}
+\index{number@{number}!WaitingList@{WaitingList}}
+\doxysubsubsection{\texorpdfstring{number}{number}}
+{\footnotesize\ttfamily int Waiting\+List\+::number\hspace{0.3cm}{\ttfamily [protected]}}
+

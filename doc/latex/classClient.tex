@@ -1,0 +1,66 @@
+\hypertarget{classClient}{}\doxysection{Client Class Reference}
+\label{classClient}\index{Client@{Client}}
+
+
+{\ttfamily \#include $<$Client.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classClient_a4ce9750b3d453c8b2f895a9f5419d2d5}{Client}} (double, \mbox{\hyperlink{classBank}{Bank}} $\ast$)
+\item 
+double \mbox{\hyperlink{classClient_a748d86e8c875f10a5d92c3cf2a12e621}{get\+Arrival\+Time}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classClient_a607d3a00129637e04449a6fdf298d115}{arrival\+Time}}
+\item 
+\mbox{\hyperlink{classBank}{Bank}} $\ast$ \mbox{\hyperlink{classClient_a0617be67b765d357a54e350817fe37b2}{bank}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+a class for the bank client. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classClient_a4ce9750b3d453c8b2f895a9f5419d2d5}\label{classClient_a4ce9750b3d453c8b2f895a9f5419d2d5}} 
+\index{Client@{Client}!Client@{Client}}
+\index{Client@{Client}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{Client()}{Client()}}
+{\footnotesize\ttfamily Client\+::\+Client (\begin{DoxyParamCaption}\item[{double}]{aT,  }\item[{\mbox{\hyperlink{classBank}{Bank}} $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Constructor for class \mbox{\hyperlink{classClient}{Client}} 
+\begin{DoxyParams}{Parameters}
+{\em aT} & time of client\textquotesingle{}s arrival \\
+\hline
+{\em b} & intance object of \mbox{\hyperlink{classBank}{Bank}} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classClient_a748d86e8c875f10a5d92c3cf2a12e621}\label{classClient_a748d86e8c875f10a5d92c3cf2a12e621}} 
+\index{Client@{Client}!getArrivalTime@{getArrivalTime}}
+\index{getArrivalTime@{getArrivalTime}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{getArrivalTime()}{getArrivalTime()}}
+{\footnotesize\ttfamily double Client\+::get\+Arrival\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+getter for arrival time of the client \begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classClient_a607d3a00129637e04449a6fdf298d115}\label{classClient_a607d3a00129637e04449a6fdf298d115}} 
+\index{Client@{Client}!arrivalTime@{arrivalTime}}
+\index{arrivalTime@{arrivalTime}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{arrivalTime}{arrivalTime}}
+{\footnotesize\ttfamily double Client\+::arrival\+Time\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classClient_a0617be67b765d357a54e350817fe37b2}\label{classClient_a0617be67b765d357a54e350817fe37b2}} 
+\index{Client@{Client}!bank@{bank}}
+\index{bank@{bank}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{bank}{bank}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBank}{Bank}}$\ast$ Client\+::bank\hspace{0.3cm}{\ttfamily [protected]}}
+

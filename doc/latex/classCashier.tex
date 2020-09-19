@@ -1,0 +1,186 @@
+\hypertarget{classCashier}{}\doxysection{Cashier Class Reference}
+\label{classCashier}\index{Cashier@{Cashier}}
+
+
+{\ttfamily \#include $<$Cashier.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCashier_a9dd99a4a5f4c5295aaa4584b21e30aec}{Cashier}} ()
+\item 
+\mbox{\hyperlink{classCashier_a4a53d031bc127b3458635d039b16c96e}{Cashier}} (double, int, \mbox{\hyperlink{classBank}{Bank}} $\ast$)
+\item 
+\mbox{\hyperlink{classCashier_af69977426e869d157423fe6d0d4d08ac}{$\sim$\+Cashier}} ()
+\item 
+double \mbox{\hyperlink{classCashier_aa7ad7daa19ee0a709b8e2756465f50f6}{get\+Average\+Service\+Time}} ()
+\item 
+int \mbox{\hyperlink{classCashier_ab3e5327e7037b9d8097139390a3f0f1f}{get\+Client\+Nb}} ()
+\item 
+int \mbox{\hyperlink{classCashier_aa2d8c7ea08df98c01f2a9a10dae23680}{get\+Number}} ()
+\item 
+bool \mbox{\hyperlink{classCashier_a4b219d3b33fe0b1db80625fcf59ee1ac}{is\+Free}} ()
+\item 
+void \mbox{\hyperlink{classCashier_a5bab61e1ae1b70092dc7f72b9419d08c}{serve}} (\mbox{\hyperlink{classClient}{Client}})
+\item 
+void \mbox{\hyperlink{classCashier_ae493db178a5b61f2d955f11fe201ee4d}{wait}} ()
+\item 
+double \mbox{\hyperlink{classCashier_ac0c91ebe2a9ca9428537e79b82bfbe9f}{get\+Occupation\+Rate}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classCashier_a41c9a60f3c82f7c7125f4e1bbfa82a41}{number}}
+\item 
+double \mbox{\hyperlink{classCashier_a09a6399b272d4f5cff470dfa9de5d368}{average\+Service\+Time}}
+\item 
+\mbox{\hyperlink{classClient}{Client}} \mbox{\hyperlink{classCashier_a8a03314122a0e923d31cfb6add90bfe8}{current\+Client}}
+\item 
+bool \mbox{\hyperlink{classCashier_a11864876b5898d12a881249e35181b1c}{serving\+Client}}
+\item 
+int \mbox{\hyperlink{classCashier_a4be0d28c4f35b13f954da48337135fa4}{client\+Nb}}
+\item 
+double \mbox{\hyperlink{classCashier_ac838d4be082e26e9aa0cd3854826c6cb}{occupation\+Time}}
+\item 
+\mbox{\hyperlink{classBank}{Bank}} $\ast$ \mbox{\hyperlink{classCashier_a8cb26e96d79e8e38e52b63b1f192d2e7}{bank}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCashier_a9dd99a4a5f4c5295aaa4584b21e30aec}\label{classCashier_a9dd99a4a5f4c5295aaa4584b21e30aec}} 
+\index{Cashier@{Cashier}!Cashier@{Cashier}}
+\index{Cashier@{Cashier}!Cashier@{Cashier}}
+\doxysubsubsection{\texorpdfstring{Cashier()}{Cashier()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Cashier\+::\+Cashier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+empty consntructor for class \mbox{\hyperlink{classCashier}{Cashier}} \mbox{\Hypertarget{classCashier_a4a53d031bc127b3458635d039b16c96e}\label{classCashier_a4a53d031bc127b3458635d039b16c96e}} 
+\index{Cashier@{Cashier}!Cashier@{Cashier}}
+\index{Cashier@{Cashier}!Cashier@{Cashier}}
+\doxysubsubsection{\texorpdfstring{Cashier()}{Cashier()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Cashier\+::\+Cashier (\begin{DoxyParamCaption}\item[{double}]{average\+Time,  }\item[{int}]{n,  }\item[{\mbox{\hyperlink{classBank}{Bank}} $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Constructor for \mbox{\hyperlink{classCashier}{Cashier}} 
+\begin{DoxyParams}{Parameters}
+{\em average\+Time} & average service time for this cashier \\
+\hline
+{\em n} & number of the cashier, used as ID \\
+\hline
+{\em b} & instance of the \mbox{\hyperlink{classBank}{Bank}} object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCashier_af69977426e869d157423fe6d0d4d08ac}\label{classCashier_af69977426e869d157423fe6d0d4d08ac}} 
+\index{Cashier@{Cashier}!````~Cashier@{$\sim$Cashier}}
+\index{````~Cashier@{$\sim$Cashier}!Cashier@{Cashier}}
+\doxysubsubsection{\texorpdfstring{$\sim$Cashier()}{~Cashier()}}
+{\footnotesize\ttfamily Cashier\+::$\sim$\+Cashier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCashier_aa7ad7daa19ee0a709b8e2756465f50f6}\label{classCashier_aa7ad7daa19ee0a709b8e2756465f50f6}} 
+\index{Cashier@{Cashier}!getAverageServiceTime@{getAverageServiceTime}}
+\index{getAverageServiceTime@{getAverageServiceTime}!Cashier@{Cashier}}
+\doxysubsubsection{\texorpdfstring{getAverageServiceTime()}{getAverageServiceTime()}}
+{\footnotesize\ttfamily double Cashier\+::get\+Average\+Service\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+getter for average service time \begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCashier_ab3e5327e7037b9d8097139390a3f0f1f}\label{classCashier_ab3e5327e7037b9d8097139390a3f0f1f}} 
+\index{Cashier@{Cashier}!getClientNb@{getClientNb}}
+\index{getClientNb@{getClientNb}!Cashier@{Cashier}}
+\doxysubsubsection{\texorpdfstring{getClientNb()}{getClientNb()}}
+{\footnotesize\ttfamily int Cashier\+::get\+Client\+Nb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+getter for number of clients served \begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCashier_aa2d8c7ea08df98c01f2a9a10dae23680}\label{classCashier_aa2d8c7ea08df98c01f2a9a10dae23680}} 
+\index{Cashier@{Cashier}!getNumber@{getNumber}}
+\index{getNumber@{getNumber}!Cashier@{Cashier}}
+\doxysubsubsection{\texorpdfstring{getNumber()}{getNumber()}}
+{\footnotesize\ttfamily int Cashier\+::get\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+getter for the number of the cashier \begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCashier_ac0c91ebe2a9ca9428537e79b82bfbe9f}\label{classCashier_ac0c91ebe2a9ca9428537e79b82bfbe9f}} 
+\index{Cashier@{Cashier}!getOccupationRate@{getOccupationRate}}
+\index{getOccupationRate@{getOccupationRate}!Cashier@{Cashier}}
+\doxysubsubsection{\texorpdfstring{getOccupationRate()}{getOccupationRate()}}
+{\footnotesize\ttfamily double Cashier\+::get\+Occupation\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+calculated occupation rate in the simulation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCashier_a4b219d3b33fe0b1db80625fcf59ee1ac}\label{classCashier_a4b219d3b33fe0b1db80625fcf59ee1ac}} 
+\index{Cashier@{Cashier}!isFree@{isFree}}
+\index{isFree@{isFree}!Cashier@{Cashier}}
+\doxysubsubsection{\texorpdfstring{isFree()}{isFree()}}
+{\footnotesize\ttfamily bool Cashier\+::is\+Free (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+getter to check wheter \mbox{\hyperlink{classCashier}{Cashier}} is free \begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCashier_a5bab61e1ae1b70092dc7f72b9419d08c}\label{classCashier_a5bab61e1ae1b70092dc7f72b9419d08c}} 
+\index{Cashier@{Cashier}!serve@{serve}}
+\index{serve@{serve}!Cashier@{Cashier}}
+\doxysubsubsection{\texorpdfstring{serve()}{serve()}}
+{\footnotesize\ttfamily void Cashier\+::serve (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classClient}{Client}}}]{c }\end{DoxyParamCaption})}
+
+serve a \mbox{\hyperlink{classClient}{Client}} object 
+\begin{DoxyParams}{Parameters}
+{\em c} & instance of \mbox{\hyperlink{classClient}{Client}} object to be served \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCashier_ae493db178a5b61f2d955f11fe201ee4d}\label{classCashier_ae493db178a5b61f2d955f11fe201ee4d}} 
+\index{Cashier@{Cashier}!wait@{wait}}
+\index{wait@{wait}!Cashier@{Cashier}}
+\doxysubsubsection{\texorpdfstring{wait()}{wait()}}
+{\footnotesize\ttfamily void Cashier\+::wait (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+reset obeject settings and wait until next client 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classCashier_a09a6399b272d4f5cff470dfa9de5d368}\label{classCashier_a09a6399b272d4f5cff470dfa9de5d368}} 
+\index{Cashier@{Cashier}!averageServiceTime@{averageServiceTime}}
+\index{averageServiceTime@{averageServiceTime}!Cashier@{Cashier}}
+\doxysubsubsection{\texorpdfstring{averageServiceTime}{averageServiceTime}}
+{\footnotesize\ttfamily double Cashier\+::average\+Service\+Time\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classCashier_a8cb26e96d79e8e38e52b63b1f192d2e7}\label{classCashier_a8cb26e96d79e8e38e52b63b1f192d2e7}} 
+\index{Cashier@{Cashier}!bank@{bank}}
+\index{bank@{bank}!Cashier@{Cashier}}
+\doxysubsubsection{\texorpdfstring{bank}{bank}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBank}{Bank}}$\ast$ Cashier\+::bank\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classCashier_a4be0d28c4f35b13f954da48337135fa4}\label{classCashier_a4be0d28c4f35b13f954da48337135fa4}} 
+\index{Cashier@{Cashier}!clientNb@{clientNb}}
+\index{clientNb@{clientNb}!Cashier@{Cashier}}
+\doxysubsubsection{\texorpdfstring{clientNb}{clientNb}}
+{\footnotesize\ttfamily int Cashier\+::client\+Nb\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classCashier_a8a03314122a0e923d31cfb6add90bfe8}\label{classCashier_a8a03314122a0e923d31cfb6add90bfe8}} 
+\index{Cashier@{Cashier}!currentClient@{currentClient}}
+\index{currentClient@{currentClient}!Cashier@{Cashier}}
+\doxysubsubsection{\texorpdfstring{currentClient}{currentClient}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classClient}{Client}} Cashier\+::current\+Client\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classCashier_a41c9a60f3c82f7c7125f4e1bbfa82a41}\label{classCashier_a41c9a60f3c82f7c7125f4e1bbfa82a41}} 
+\index{Cashier@{Cashier}!number@{number}}
+\index{number@{number}!Cashier@{Cashier}}
+\doxysubsubsection{\texorpdfstring{number}{number}}
+{\footnotesize\ttfamily int Cashier\+::number\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classCashier_ac838d4be082e26e9aa0cd3854826c6cb}\label{classCashier_ac838d4be082e26e9aa0cd3854826c6cb}} 
+\index{Cashier@{Cashier}!occupationTime@{occupationTime}}
+\index{occupationTime@{occupationTime}!Cashier@{Cashier}}
+\doxysubsubsection{\texorpdfstring{occupationTime}{occupationTime}}
+{\footnotesize\ttfamily double Cashier\+::occupation\+Time\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classCashier_a11864876b5898d12a881249e35181b1c}\label{classCashier_a11864876b5898d12a881249e35181b1c}} 
+\index{Cashier@{Cashier}!servingClient@{servingClient}}
+\index{servingClient@{servingClient}!Cashier@{Cashier}}
+\doxysubsubsection{\texorpdfstring{servingClient}{servingClient}}
+{\footnotesize\ttfamily bool Cashier\+::serving\+Client\hspace{0.3cm}{\ttfamily [protected]}}
+

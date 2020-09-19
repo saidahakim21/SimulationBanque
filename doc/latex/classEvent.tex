@@ -1,0 +1,81 @@
+\hypertarget{classEvent}{}\doxysection{Event Class Reference}
+\label{classEvent}\index{Event@{Event}}
+
+
+{\ttfamily \#include $<$Event.\+hpp$>$}
+
+Inheritance diagram for Event\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classEvent}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEvent_a6be3a3e518c68907b63f319b2e6cb560}{Event}} (double, \mbox{\hyperlink{classBank}{Bank}} $\ast$)
+\item 
+virtual void \mbox{\hyperlink{classEvent_a94833981462bef16e87a28de979f05fe}{process}} ()
+\item 
+double \mbox{\hyperlink{classEvent_a9380b06e27cd13950c89be00d0cde8d2}{get\+Time}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBank}{Bank}} $\ast$ \mbox{\hyperlink{classEvent_aaa7da07c0652128b14310eb9166a2b5f}{bank}}
+\item 
+double \mbox{\hyperlink{classEvent_a7cf2572f1124c9700c89ff9f01b311bf}{time}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+a class of an event, holds attributes about the object 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEvent_a6be3a3e518c68907b63f319b2e6cb560}\label{classEvent_a6be3a3e518c68907b63f319b2e6cb560}} 
+\index{Event@{Event}!Event@{Event}}
+\index{Event@{Event}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{Event()}{Event()}}
+{\footnotesize\ttfamily Event\+::\+Event (\begin{DoxyParamCaption}\item[{double}]{t,  }\item[{\mbox{\hyperlink{classBank}{Bank}} $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Constructor of \mbox{\hyperlink{classEvent}{Event}} 
+\begin{DoxyParams}{Parameters}
+{\em t} & \\
+\hline
+{\em b} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEvent_a9380b06e27cd13950c89be00d0cde8d2}\label{classEvent_a9380b06e27cd13950c89be00d0cde8d2}} 
+\index{Event@{Event}!getTime@{getTime}}
+\index{getTime@{getTime}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{getTime()}{getTime()}}
+{\footnotesize\ttfamily double Event\+::get\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classEvent_a94833981462bef16e87a28de979f05fe}\label{classEvent_a94833981462bef16e87a28de979f05fe}} 
+\index{Event@{Event}!process@{process}}
+\index{process@{process}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily void Event\+::process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classArrive_ae6dc85566ae79a4aad150c0eae0b55ef}{Arrive}}, and \mbox{\hyperlink{classDepart_a440278c960f8b2ecc47e6c4ba129f9fd}{Depart}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classEvent_aaa7da07c0652128b14310eb9166a2b5f}\label{classEvent_aaa7da07c0652128b14310eb9166a2b5f}} 
+\index{Event@{Event}!bank@{bank}}
+\index{bank@{bank}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{bank}{bank}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBank}{Bank}}$\ast$ Event\+::bank\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classEvent_a7cf2572f1124c9700c89ff9f01b311bf}\label{classEvent_a7cf2572f1124c9700c89ff9f01b311bf}} 
+\index{Event@{Event}!time@{time}}
+\index{time@{time}!Event@{Event}}
+\doxysubsubsection{\texorpdfstring{time}{time}}
+{\footnotesize\ttfamily double Event\+::time\hspace{0.3cm}{\ttfamily [protected]}}
+

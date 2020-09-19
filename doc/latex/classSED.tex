@@ -1,0 +1,106 @@
+\hypertarget{classSED}{}\doxysection{S\+ED Class Reference}
+\label{classSED}\index{SED@{SED}}
+
+
+{\ttfamily \#include $<$D\+E\+S.\+hpp$>$}
+
+Inheritance diagram for S\+ED\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSED}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSED_a323d05bd9bd887d2e8c4c6653ee6782d}{S\+ED}} (double)
+\item 
+virtual \mbox{\hyperlink{classSED_ac3fef1fe242befce550d9bc2b11f2c07}{$\sim$\+S\+ED}} ()
+\item 
+virtual void \mbox{\hyperlink{classSED_a0b9ef8bcbc4cd2a49ca64214b667b36d}{run}} ()
+\item 
+void \mbox{\hyperlink{classSED_a43315e591fbe40b2c1321768fb63f057}{add\+Event}} (\mbox{\hyperlink{classEvent}{Event}} $\ast$)
+\item 
+double \mbox{\hyperlink{classSED_a09d702517d20be2aa450808cb171018b}{get\+Time}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classSED_a4c24bcd2c1f337f15c4eb72989ba6ac8}{\+\_\+time}}
+\item 
+set$<$ \mbox{\hyperlink{classEvent}{Event}} $\ast$, \mbox{\hyperlink{structEventComp}{Event\+Comp}} $>$ \mbox{\hyperlink{classSED_a493b773b209b067806188812aa7762e0}{events}}
+\begin{DoxyCompactList}\small\item\em a Set of \mbox{\hyperlink{classEvent}{Event}} objects \end{DoxyCompactList}\item 
+set$<$ \mbox{\hyperlink{classEvent}{Event}} $\ast$, \mbox{\hyperlink{structEventComp}{Event\+Comp}} $>$\+::iterator \mbox{\hyperlink{classSED_a543c29cd5a5c8e96a56fec0ba00506ad}{event\+Iterator}}
+\begin{DoxyCompactList}\small\item\em an iterator to iterate over the simulation events in a chronological way \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSED_a323d05bd9bd887d2e8c4c6653ee6782d}\label{classSED_a323d05bd9bd887d2e8c4c6653ee6782d}} 
+\index{SED@{SED}!SED@{SED}}
+\index{SED@{SED}!SED@{SED}}
+\doxysubsubsection{\texorpdfstring{SED()}{SED()}}
+{\footnotesize\ttfamily S\+E\+D\+::\+S\+ED (\begin{DoxyParamCaption}\item[{double}]{start }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classSED_ac3fef1fe242befce550d9bc2b11f2c07}\label{classSED_ac3fef1fe242befce550d9bc2b11f2c07}} 
+\index{SED@{SED}!````~SED@{$\sim$SED}}
+\index{````~SED@{$\sim$SED}!SED@{SED}}
+\doxysubsubsection{\texorpdfstring{$\sim$SED()}{~SED()}}
+{\footnotesize\ttfamily S\+E\+D\+::$\sim$\+S\+ED (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSED_a43315e591fbe40b2c1321768fb63f057}\label{classSED_a43315e591fbe40b2c1321768fb63f057}} 
+\index{SED@{SED}!addEvent@{addEvent}}
+\index{addEvent@{addEvent}!SED@{SED}}
+\doxysubsubsection{\texorpdfstring{addEvent()}{addEvent()}}
+{\footnotesize\ttfamily void S\+E\+D\+::add\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEvent}{Event}} $\ast$}]{e }\end{DoxyParamCaption})}
+
+add a new \mbox{\hyperlink{classEvent}{Event}} object to the list of events of the simulation \mbox{\Hypertarget{classSED_a09d702517d20be2aa450808cb171018b}\label{classSED_a09d702517d20be2aa450808cb171018b}} 
+\index{SED@{SED}!getTime@{getTime}}
+\index{getTime@{getTime}!SED@{SED}}
+\doxysubsubsection{\texorpdfstring{getTime()}{getTime()}}
+{\footnotesize\ttfamily double S\+E\+D\+::get\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+getter for current time of simulation \begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSED_a0b9ef8bcbc4cd2a49ca64214b667b36d}\label{classSED_a0b9ef8bcbc4cd2a49ca64214b667b36d}} 
+\index{SED@{SED}!run@{run}}
+\index{run@{run}!SED@{SED}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void S\+E\+D\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classBank_aa5b791e8ffd789ba2e68d0345f1edbad}{Bank}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classSED_a4c24bcd2c1f337f15c4eb72989ba6ac8}\label{classSED_a4c24bcd2c1f337f15c4eb72989ba6ac8}} 
+\index{SED@{SED}!\_time@{\_time}}
+\index{\_time@{\_time}!SED@{SED}}
+\doxysubsubsection{\texorpdfstring{\_time}{\_time}}
+{\footnotesize\ttfamily double S\+E\+D\+::\+\_\+time\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classSED_a543c29cd5a5c8e96a56fec0ba00506ad}\label{classSED_a543c29cd5a5c8e96a56fec0ba00506ad}} 
+\index{SED@{SED}!eventIterator@{eventIterator}}
+\index{eventIterator@{eventIterator}!SED@{SED}}
+\doxysubsubsection{\texorpdfstring{eventIterator}{eventIterator}}
+{\footnotesize\ttfamily set$<$\mbox{\hyperlink{classEvent}{Event}}$\ast$, \mbox{\hyperlink{structEventComp}{Event\+Comp}}$>$\+::iterator S\+E\+D\+::event\+Iterator\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+an iterator to iterate over the simulation events in a chronological way 
+
+\mbox{\Hypertarget{classSED_a493b773b209b067806188812aa7762e0}\label{classSED_a493b773b209b067806188812aa7762e0}} 
+\index{SED@{SED}!events@{events}}
+\index{events@{events}!SED@{SED}}
+\doxysubsubsection{\texorpdfstring{events}{events}}
+{\footnotesize\ttfamily set$<$\mbox{\hyperlink{classEvent}{Event}}$\ast$, \mbox{\hyperlink{structEventComp}{Event\+Comp}}$>$ S\+E\+D\+::events\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+a Set of \mbox{\hyperlink{classEvent}{Event}} objects 
+

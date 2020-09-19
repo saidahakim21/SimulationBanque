@@ -1,0 +1,87 @@
+\hypertarget{classDepart}{}\doxysection{Depart Class Reference}
+\label{classDepart}\index{Depart@{Depart}}
+
+
+{\ttfamily \#include $<$Depart.\+hpp$>$}
+
+Inheritance diagram for Depart\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDepart}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDepart_a8e31f4328cdf80e31d8071f3c2776907}{Depart}} (double, \mbox{\hyperlink{classCashier}{Cashier}} $\ast$, int, \mbox{\hyperlink{classClient}{Client}}, \mbox{\hyperlink{classBank}{Bank}} $\ast$)
+\item 
+void \mbox{\hyperlink{classDepart_a440278c960f8b2ecc47e6c4ba129f9fd}{process}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classDepart_a0a76749170f493573af0ef45de982fdb}{number}}
+\item 
+\mbox{\hyperlink{classCashier}{Cashier}} $\ast$ \mbox{\hyperlink{classDepart_a6a3250d553f008d8cb608218cc9cc899}{\+\_\+cashier}}
+\item 
+\mbox{\hyperlink{classClient}{Client}} \mbox{\hyperlink{classDepart_ad571a495457b59922fdad7e0d3b8775a}{\+\_\+client}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+a class of a client depart event, extends \mbox{\hyperlink{classEvent}{Event}} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDepart_a8e31f4328cdf80e31d8071f3c2776907}\label{classDepart_a8e31f4328cdf80e31d8071f3c2776907}} 
+\index{Depart@{Depart}!Depart@{Depart}}
+\index{Depart@{Depart}!Depart@{Depart}}
+\doxysubsubsection{\texorpdfstring{Depart()}{Depart()}}
+{\footnotesize\ttfamily Depart\+::\+Depart (\begin{DoxyParamCaption}\item[{double}]{t,  }\item[{\mbox{\hyperlink{classCashier}{Cashier}} $\ast$}]{ca,  }\item[{int}]{n,  }\item[{\mbox{\hyperlink{classClient}{Client}}}]{cl,  }\item[{\mbox{\hyperlink{classBank}{Bank}} $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Constructor with parameters\+: 
+\begin{DoxyParams}{Parameters}
+{\em t} & time of the event \\
+\hline
+{\em ca} & pointer to the freed cashier \\
+\hline
+{\em n} & number of cashier \\
+\hline
+{\em cl} & the served client \\
+\hline
+{\em b} & pointer to the bank \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDepart_a440278c960f8b2ecc47e6c4ba129f9fd}\label{classDepart_a440278c960f8b2ecc47e6c4ba129f9fd}} 
+\index{Depart@{Depart}!process@{process}}
+\index{process@{process}!Depart@{Depart}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily void Depart\+::process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+processing the event 
+
+Reimplemented from \mbox{\hyperlink{classEvent_a94833981462bef16e87a28de979f05fe}{Event}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDepart_a6a3250d553f008d8cb608218cc9cc899}\label{classDepart_a6a3250d553f008d8cb608218cc9cc899}} 
+\index{Depart@{Depart}!\_cashier@{\_cashier}}
+\index{\_cashier@{\_cashier}!Depart@{Depart}}
+\doxysubsubsection{\texorpdfstring{\_cashier}{\_cashier}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCashier}{Cashier}}$\ast$ Depart\+::\+\_\+cashier\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classDepart_ad571a495457b59922fdad7e0d3b8775a}\label{classDepart_ad571a495457b59922fdad7e0d3b8775a}} 
+\index{Depart@{Depart}!\_client@{\_client}}
+\index{\_client@{\_client}!Depart@{Depart}}
+\doxysubsubsection{\texorpdfstring{\_client}{\_client}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classClient}{Client}} Depart\+::\+\_\+client\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classDepart_a0a76749170f493573af0ef45de982fdb}\label{classDepart_a0a76749170f493573af0ef45de982fdb}} 
+\index{Depart@{Depart}!number@{number}}
+\index{number@{number}!Depart@{Depart}}
+\doxysubsubsection{\texorpdfstring{number}{number}}
+{\footnotesize\ttfamily int Depart\+::number\hspace{0.3cm}{\ttfamily [protected]}}
+
