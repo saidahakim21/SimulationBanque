@@ -8,9 +8,8 @@
  * @param t time of the event happening
  * @param s an object of type Simulation
  */
-Event::Event(double t, Simulation* s) {
+Event::Event(double t) {
     time = t;
-    simulation= s;
 }
 
 /* Process of the event

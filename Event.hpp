@@ -6,15 +6,12 @@
 
 using namespace std;
 
-class Simulation;
-
 class Event {
 protected:
     double time;
-    Simulation* simulation;
 
 public:
-    explicit Event(double, Simulation*);
+    explicit Event(double);
 
     virtual void process();
     double getTime() const;

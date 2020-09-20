@@ -8,14 +8,18 @@
 #include "Client.hpp"
 #include "Event.hpp"
 
+class Simulation; 
+
 /**
  * subclass of Event
  * a class that illustrate a new client arrival event.
  */
 class Arrival: public Event {
-public:
-    explicit Arrival(double, Simulation*);
-    void process() override;
+    protected: 
+        Simulation* simulation; 
+    public:
+        explicit Arrival(double, Simulation*);
+        void process() override;
 };
 
 #endif

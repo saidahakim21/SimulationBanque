@@ -6,7 +6,9 @@ using namespace std;
  * @param time
  * @param simulation
  */
- Arrival::Arrival(double time, Simulation* simulation): Event(time,simulation) {}
+ Arrival::Arrival(double time, Simulation* sim): Event(time) {
+     simulation = sim;
+ }
 
 /**
  * process the Event, override of superclass methode

@@ -7,8 +7,9 @@ using namespace std;
  * @param t     time of the event
  * @param b pointer to the event
  */
-Depart::Depart(double time, Cashier* ca, int n, Client cl, Simulation* simulation): Event(time,simulation), cashier(ca), client(cl) {
+Depart::Depart(double time, Cashier* ca, int n, Client cl, Simulation* sim): Event(time), cashier(ca), client(cl) {
     number = n;
+    simulation = sim;
 }
 
 void Depart::process() {

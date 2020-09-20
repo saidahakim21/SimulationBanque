@@ -8,12 +8,15 @@
 #include "Event.hpp"
 
 class Cashier;
+class Simulation; 
+
 
 class Depart: public Event {
 protected:
     int number;
     Cashier* cashier;
     Client client;
+    Simulation* simulation; 
 public:
     explicit Depart(double, Cashier*, int, Client, Simulation*);
     /**
