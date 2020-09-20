@@ -1,6 +1,7 @@
 #include "program.hpp"
 
 using namespace std;
+
 /*
 
 int main() {
@@ -19,49 +20,54 @@ int main() {
     return 0;
 }
 */
-int main (int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
     int nombre_caissier = 0;
-    int temp_moyen_service = 0;
+    double temp_moyen_service[100] = {};
     int duree_prevue = 0;
-    int temp_moyen_arrive = 0;
-    int c;
+    double temp_moyen_arrive = 0;
 
-    int i = 0;
-    cout << "argc = " << argc <<endl;
-
-    while ((c = getopt(argc, argv, "n:s:d:t:")) != -1)
-    {
-        cout << "argv[i] = "<< argv[i] <<endl;
-        cout << "c = "<< char (c)  <<endl;
-        switch (c) {
-            case 'n':
-                nombre_caissier = atoi(argv[i+1]);
-                i++;
-                break;
-            case 's':
-                temp_moyen_service = atoi(argv[i+1]);
-                break;
-            case 'd':
-                duree_prevue = atoi(argv[i+1]);
-                break;
-            case 't':
-                temp_moyen_arrive = atoi(argv[i+1]);
-                break;
-            default:
-                break;
+    for (int i = 0; i < argc; i++) {
+        if (strcmp(argv[i], "-nc") == 0) {
+            nombre_caissier = atoi(argv[i + 1]);
         }
-        i++;
+
+        if (strcmp(argv[i], "-st") == 0) {
+            if (nombre_caissier == 0) {
+                cout << "please set -nc option first, before -st option" << endl;
+                exit(-1);
+            } else {
+                for (int j = 0; j < nombre_caissier; j++) {
+                    sscanf(argv[i + 1 + j], "%lf", &temp_moyen_service[j]);
+                }
+            }
+        }
+
+        if (strcmp(argv[i], "-dp") == 0) {
+            duree_prevue = atoi(argv[i + 1]);
+        }
+
+        if (strcmp(argv[i], "-tm") == 0) {
+            sscanf(argv[i + 1], "%lf", &temp_moyen_arrive);
+        }
     }
-    cout<<"nombre_caissier = " << nombre_caissier << endl;
-    cout<<"temp_moyen_service = " << temp_moyen_service << endl;
-    cout<<"duree_prevue = " << duree_prevue << endl;
-    cout<<"temp_moyen_arrive = " << temp_moyen_arrive << endl;
+
+    cout << "nombre_caissier = " << nombre_caissier << endl;
+    cout << "temp_moyen_service = " << temp_moyen_service[1] << endl;
+    cout << "duree_prevue = " << duree_prevue << endl;
+    cout << "temp_moyen_arrive = " << temp_moyen_arrive << endl;
+
+
+
+    Simulation simulation(nombre_caissier,temp_moyen_arrive,duree_prevue, temp_moyen_service);
+    simulation.run();
+
+    simulation.displayStatistics();
 
     return 0;
 }
 
-void setCashierServiceTime(double** arr, int arrSize) {
-    for(int i=0 ; i<arrSize ; i++) {
-        *(*arr+i) = 15;
+void setCashierServiceTime(double **arr, int arrSize) {
+    for (int i = 0; i < arrSize; i++) {
+        *(*arr + i) = 15;
     }
 }
