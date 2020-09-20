@@ -59,40 +59,40 @@ void Simulation::displayStatistics() {
 
     Cashier* cashiers = bank->getCashiers();
 
-    cout << "=============\nResultats de la simulation:" << endl << endl;
+    cout << "*******************\nSimulation Results: *********" << endl << endl;
 
-    cout << "PARAMETRES D'ENTREE:" << endl;
-    cout << "La simulation a une duree prevue de " << expectedTime << endl;
-    cout << cashierNb << " caissiers servent les clients en moyenne sur une duree de : [ ";
+    cout << "INPUTS :" << endl;
+    cout << "The simulation is expected to take : " << expectedTime << endl;
+    cout << cashierNb << " The average Cashiers service time is : [ ";
     for(int i=0 ; i<cashierNb ; i++) {
         cout << cashiers[i].getAverageServiceTime() << " ";
     }
-    cout << "] (1 valeur pour chaque caissier)" << endl;
-    cout << "Les clients arrivent en moyenne toutes les " << averageArrivalTime << " unites de temps" << endl << endl;
+    cout << "] (1 Value per Cashier)" << endl;
+    cout << "The average time between each two client arrival is : " << averageArrivalTime << " unites de temps" << endl << endl;
 
     // Simulation stats
     
-    cout << "RESULTATS EN SORTIE:" << endl;
-    cout << "La simulation a reellement dure " << time << endl << endl;
+    cout << "OUTPUTS : " << endl;
+    cout << "The simulation has actually took :" << time << endl << endl;
     
 
     // Cashier stats
-    cout << "Les caissiers ont ete occupes [ ";
+    cout << "Cashiers have been occupied for  [ ";
     for(int i=0 ; i< cashierNb ; i++) {
         cout << cashiers[i].getOccupationRate(time)*100 << " ";
     }
-    cout << "] % de leur temps" << endl << endl;
+    cout << "] % of theire time (1 Value by Cashier)" << endl << endl;
 
     // Client stats
     cout << "[ ";
     for(int i=0 ; i<cashierNb ; i++) {
         cout << cashiers[i].getClientNb() << " ";
     }
-    /*
-    cout << "] clients ont ete servis sur la duree totale de la simulation" << endl;
-    cout << "Il y a donc eu " << bank->waitingTimes.size() << " clients servis au total" << endl;
 
-    cout << "Les clients ont attendu en moyenne ";
+    cout << "] clients have been served during the simulation << endl;
+    cout << "Wich make " << bank->waitingTimes.size() << " clients served in total" << endl;
+
+    cout << "The average waiting time for clients :  ";
     double sum = 0;
     for (vector<double>::iterator it = waitingTimes.begin() ; it != waitingTimes.end(); ++it) {
         sum += *it;
@@ -101,10 +101,10 @@ void Simulation::displayStatistics() {
 */
     // Queue stats
     
-    cout << "La taille maximale de la file d'attente [ ";
+    cout << "The Maximum Queue line size is : [ ";
     cout << bank->getQueue()->maxLength() << "] " << endl;
     
-    cout << "La longeur maximale de la file d'attente [ ";
+    cout << "The average Queue line size is : [ ";
     cout << bank->getQueue()->averageLength() << "]" << endl;
     
 }
