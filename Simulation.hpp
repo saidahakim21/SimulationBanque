@@ -1,9 +1,3 @@
-/*********************************
- *
- * Renaud Déniel et Vincent Monot
- *
- *********************************/
-
 #ifndef __SIMULATION_HPP
 #define __SIMULATION_HPP
 
@@ -14,18 +8,30 @@
 #include "Poisson.h"
 #include "Bank.hpp"
 #include "Event.hpp"
+#include "DES.hpp"
 
-class Simulation{
+class Bank;
+
+class Simulation: public DES {
     protected: 
         double _expectedTime;
         int _cashierNb;
         double _averageArrivalTime;
         double* _averageServiceTimes;
+        Bank* _bank;
     public:
         //Simulation();
         explicit Simulation(int, double, double, double*);
         ~Simulation();
+        Bank* getBank(); 
+        /**
+         * Run simulation
+         */
         void run(); 
+        /**
+         * displays the simulation statistics on console
+         */
+        void displayStatistics(); 
 };
 
 #endif

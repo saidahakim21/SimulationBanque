@@ -1,8 +1,3 @@
-/*********************************
- *
- * Vincent Monot
- *
- *********************************/
 
 #include "Event.hpp"
 
@@ -10,11 +5,11 @@
 
 /* Constructor of Event with params:
 - time      time of the execution of the event
-- bank      pointer to the bank
+- simulation      pointer to the simulaiton
 */
-Event::Event(double t, Bank* b) {
+Event::Event(double t, Simulation* simulation) {
     time = t;
-    bank = b;
+    _simulation= simulation; 
 }
 
 /* Process of the event

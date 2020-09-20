@@ -53,9 +53,11 @@ int WaitingList::getNumber()
 
 /* Function to add (nb of client) * (time passed with his nb of clients) to the curren sum */
 void WaitingList::addToAverage() {
+    /*
     double timeDiff = bank->getTime() - _lastModifTime;
     _timeClientSum += _currClients*timeDiff;
     _lastModifTime = bank->getTime();
+    */
 }
 
 /* Returns the max length reached by the queue */
@@ -65,6 +67,8 @@ int WaitingList::maxLength() {
 
 /* Returns the number of client waiting in average in the queue */
 double WaitingList::averageLength() {
+    /*
     addToAverage();
     return _timeClientSum / bank->getTime();
+    */
 }

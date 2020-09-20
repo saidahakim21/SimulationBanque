@@ -10,9 +10,8 @@ class Bank;
 class Client {
 protected:
     double arrivalTime;
-    Bank* bank;
 public:
-    explicit Client(double, Bank*);
+    explicit Client(double);
 
     double getArrivalTime();
 };

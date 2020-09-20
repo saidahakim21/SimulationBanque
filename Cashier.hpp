@@ -1,4 +1,3 @@
-
 #ifndef __CASHIER_HPP
 #define __CASHIER_HPP
 
@@ -7,33 +6,33 @@
 #include "Bank.hpp"
 #include "Depart.hpp"
 #include "Client.hpp"
+#include "Simulation.hpp"
 
-class Bank;
+class Simulation; 
 
 class Cashier{
 protected:
-    int number;
-    double averageServiceTime;
-    Client currentClient;
-    bool servingClient;
-    int clientNb;
-    double occupationTime;
+    int _number;
+    double _averageServiceTime;
+    Client _currentClient;
+    bool _servingClient;
+    int _clientNb;
+    double _occupationTime;
 
-    Bank* bank;
 public:
     Cashier();
-    explicit Cashier(double, int, Bank*);
+    explicit Cashier(double, int);
     ~Cashier();
 
-    double getAverageServiceTime();
+    double averageServiceTime();
     int getClientNb();
     int getNumber();
 
     bool isFree();
-    void serve(Client);
+    void serve(Client, Simulation*);
     void wait();
 
-    double getOccupationRate();
+    double getOccupationRate(double simulationDuration);
 };
 
 #endif

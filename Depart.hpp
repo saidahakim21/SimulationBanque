@@ -2,7 +2,7 @@
 #define __DEPART_H
 #include <iostream>
 
-#include "Bank.hpp"
+#include "Simulation.hpp"
 #include "Cashier.hpp"
 #include "Client.hpp"
 #include "Event.hpp"
@@ -15,7 +15,7 @@ protected:
     Cashier* _cashier;
     Client _client;
 public:
-    explicit Depart(double, Cashier*, int, Client, Bank*);
+    explicit Depart(double, Cashier*, int, Client, Simulation*);
     /**
      * processing the event
      */

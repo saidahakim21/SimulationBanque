@@ -5,9 +5,8 @@
  * @param aT       time of client's arrival
  * @param b intance object of Bank
  */
-Client::Client(double aT, Bank* b){
+Client::Client(double aT){
     arrivalTime = aT;
-    bank = b;
 }
 
 /**

@@ -10,13 +10,13 @@
 #include <iostream>
 
 #include "Poisson.h"
-#include "Bank.hpp"
+#include "Simulation.hpp"
 #include "Client.hpp"
 #include "Event.hpp"
 
 class ClientArrival: public Event {
 public:
-    explicit ClientArrival(double, Bank*);
+    explicit ClientArrival(double, Simulation*);
     void process() override;
 };
 

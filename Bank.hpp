@@ -15,7 +15,7 @@ class WaitingList;
 /**
  * A class for a bank illustration.
  */
-class Bank: public DES {
+class Bank{
 protected:
     /// the average time until next client arrival
     double averageArrivalTime;
@@ -33,12 +33,8 @@ protected:
     std::vector<double> waitingTimes;
 
 public:
-    Bank(double, double, int, double, double*);
-    ~Bank() override;
-    /**
-     * run the simulation, itirate over the events and incrementing time
-     */
-    void run() override;
+    Bank(double, int, double, double*);
+    ~Bank();
 
     /**
      * getter for average interval till next arrival client
@@ -61,6 +57,12 @@ public:
      * @return pointer to Cashier
      */
     Cashier* freeCashier();
+
+    /**
+     * return the Cashiers
+     * @return pointer to Cashiers
+     */
+    Cashier* getCashiers();
     /**
      * getter for the waiting list
      * @return a pointer to WaitingList object
@@ -72,15 +74,7 @@ public:
      * @param t time to add
      */
     void addWaitingTime(double);
-    /**
-     * calculates and return the real duration of the simulation
-     * @return double
-     */
-    double realDuration();
 
-    /**
-     * displays the simulation statistics on console
-     */
     void displayStats();
 };
 

@@ -6,18 +6,18 @@
 
 using namespace std;
 
-class Bank;
+class Simulation;
 
 class Event {
 protected:
-    Bank* bank;
     double time;
+    Simulation* _simulation;     
+
 public:
-    explicit Event(double, Bank*);
+    explicit Event(double, Simulation*);
 
     virtual void process();
     double getTime() const;
-//    bool operator<(const Event&) const;
 };
 
 #endif

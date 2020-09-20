@@ -6,11 +6,14 @@ int main() {
 
     int cashierNb = 3; 
     double* averageServiceTimes = new double[cashierNb];
-    setCashierServiceTime(&averageServiceTimes, 3);
+    setCashierServiceTime(&averageServiceTimes, cashierNb);
 
 
-    Simulation simulation(cashierNb,3,200, averageServiceTimes); 
+
+    Simulation simulation(cashierNb,30,1000, averageServiceTimes); 
     simulation.run(); 
+
+    simulation.displayStatistics(); 
 
     return 0;
 }
@@ -20,5 +23,3 @@ void setCashierServiceTime(double** arr, int arrSize) {
         *(*arr+i) = 15;
     }
 }
-
-
