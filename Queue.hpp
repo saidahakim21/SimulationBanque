@@ -33,7 +33,6 @@ public:
     bool isEmpty();
     int size();
     Client removeFirst();
-    int getNumber();
 
     int maxLength();
     double averageLength();

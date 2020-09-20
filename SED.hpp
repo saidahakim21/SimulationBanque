@@ -10,11 +10,13 @@ using namespace std;
 
 class Event;
 
-/* Struct used to compare two events for the set of events */
+/**
+ * a struct used to compare two events by their starting time
+ */
 struct EventComp {
-    bool operator()(const Event* lhs, const Event* rhs) const  {
+    bool operator()(const Event* e1, const Event* e2) const  {
         /* Events are compared using their execution time */
-        return (lhs->getTime() < rhs->getTime());
+        return (e1->getTime() < e2->getTime());
     }
 };
 

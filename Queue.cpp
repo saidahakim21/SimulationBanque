@@ -1,6 +1,9 @@
 #include "Queue.hpp"
 
-/* Constructor with the index in the array of waiting lists in Bank */
+/**
+ * constructor for class Queue
+ * @param b an object of type Bank
+ */
 Queue::Queue(Bank* b) {
     currClients = 0;
     maxClients = 0;
@@ -13,7 +16,10 @@ Queue::Queue(Bank* b) {
 
 Queue::~Queue() = default;
 
-/* Add Client to Queue */
+/**
+ * add a new cleint to the queue
+ * @param c a Client object to be added
+ */
 void Queue::add(Client c) {
     addToAverage();
 
@@ -24,7 +30,10 @@ void Queue::add(Client c) {
     clientList.push_back(c);
 }
 
-/* Remove the first waiting Client of the queue and returns it */
+/**
+ * pop the first client from the queue
+ * @return a Client object
+ */
 Client Queue::removeFirst() {
     addToAverage();
     currClients --;
@@ -33,20 +42,20 @@ Client Queue::removeFirst() {
     return c;
 }
 
-/* Returns if the queue is empty */
+/**
+ * check and return a value if the queue is empty or not
+ * @return boolean
+ */
 bool Queue::isEmpty(){
     return clientList.empty();
 }
 
-/* Returns the size of the queue */
+/**
+ * calculates and return the current size of the queue
+ * @return int
+ */
 int Queue::size() {
     return clientList.size();
-}
-
-/* Returns the index of the queue in the Bank */
-int Queue::getNumber()
-{
-    return number;
 }
 
 /* Function to add (nb of client) * (time passed with his nb of clients) to the curren sum */

@@ -23,7 +23,7 @@ using namespace std;
     if(cashier == nullptr) {
         Queue* wl = bank->getQueue();
         wl->add(client);
-        cout << "New client waits at line " << wl->getNumber() << endl;
+        cout << "New client waits at line " << endl;
     }
     // Else, have the cashier serve the client
     else {

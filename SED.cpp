@@ -1,9 +1,10 @@
 
 #include "SED.hpp"
 
-/* Constructor of SED:
-- start     starting time of the simulation
-*/
+/**
+ * constructor for class SED, Simulation of Discret Events
+ * @param start
+ */
 SED::SED(double start) {
     time = start;
 }
@@ -12,16 +13,24 @@ SED::~SED() {
     events.clear();
 }
 
-/* Overriden by Bank */
+/**
+ * start the simulation to be override
+ */
 void SED::run() {
 }
 
-/* Add event to set of events */
+/**
+ * add a new Event into the simulation
+ * @param e an object of type Event
+ */
 void SED::addEvent(Event* e) {
     events.insert(e);
 }
 
-/* Returns the current time of the simulation */
+/**
+ * get the current time of the simulation
+ * @return double
+ */
 double SED::getTime() {
     return time;
 }

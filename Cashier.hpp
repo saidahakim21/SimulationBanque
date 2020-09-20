@@ -10,6 +10,9 @@
 
 class Simulation; 
 
+/**
+ * a class that illustrates a cashier object
+ */
 class Cashier{
 protected:
     int number;
@@ -20,18 +23,44 @@ protected:
     double occupationTime;
 
 public:
+    /**
+     * default empty constructor for a Cahsier class
+     */
     Cashier();
     explicit Cashier(double, int);
     ~Cashier();
 
+    /**
+     * getter for the average service time of the cashier
+     * @return double
+     */
     double getAverageServiceTime();
+    /**
+     * getter of the client number
+     * @return int
+     */
     int getClientNb();
+    /**
+     * getter of the cashier number
+     * @return int
+     */
     int getNumber();
 
+    /**
+     * checks whether the cashier is free or not
+     * @return boolean, true if free, false otherwie
+     */
     bool isFree();
     void serve(Client, Simulation*);
+    /**
+     * wait until next client arrival
+     */
     void wait();
-
+    /**
+     * calculate and return the occupation rate during the simulation
+     * @param simulationDuration the actual duration of the simulaiton
+     * @return double
+     */
     double getOccupationRate(double simulationDuration);
 };
 

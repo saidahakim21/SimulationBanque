@@ -3,10 +3,11 @@
 
 #include <iostream>
 
-/* Constructor of Event with params:
-- time      time of the execution of the event
-- simulation      pointer to the simulaiton
-*/
+/**
+ * constuctor for class Event
+ * @param t time of the event happening
+ * @param s an object of type Simulation
+ */
 Event::Event(double t, Simulation* s) {
     time = t;
     simulation= s;

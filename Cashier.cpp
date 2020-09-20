@@ -14,7 +14,7 @@ Cashier::Cashier(): currentClient(Client(-1)) {
 }
 
 /**
- * constructor for class Cashier
+ * explicit constructor of class cashier
  * @param averageTime average service time for this cashier
  * @param n the number of the Cashier, used as an ID
  */
@@ -44,6 +44,11 @@ bool Cashier::isFree() {
     return !servingClient;
 }
 
+/**
+ * serve a client object
+ * @param c an object of type Client
+ * @param simulation a Simulation object
+ */
 void Cashier::serve(Client c, Simulation* simulation) {
     
     clientNb ++;
