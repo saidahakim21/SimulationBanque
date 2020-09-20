@@ -1,3 +1,7 @@
+/******************************
+ * created by Yacine ZABAT
+ ******************************/
+
 #ifndef __WAITINGLIST_HPP
 #define __WAITINGLIST_HPP
 

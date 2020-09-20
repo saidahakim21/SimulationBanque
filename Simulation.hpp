@@ -1,3 +1,6 @@
+/******************************
+ * created by Yacine ZABAT && Abdelhakim SAID
+ ******************************/
 #ifndef __SIMULATION_HPP
 #define __SIMULATION_HPP
 

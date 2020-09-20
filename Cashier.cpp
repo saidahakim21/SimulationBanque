@@ -1,3 +1,7 @@
+/******************************
+ * created by Abdelhakim SAID
+ ******************************/
+
 #include "Cashier.hpp"
 
 using namespace std;

@@ -1,3 +1,7 @@
+/******************************
+ * created by Yacine ZABAT && Abdelhakim SAID
+ ******************************/
+
 #include "Simulation.hpp"
 
 using namespace std;

@@ -1,4 +1,6 @@
-
+/******************************
+ * created by Yacine ZABAT
+ ******************************/
 #include "Event.hpp"
 
 #include <iostream>

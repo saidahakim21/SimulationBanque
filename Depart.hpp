@@ -1,3 +1,6 @@
+/******************************
+ * created by Yacine ZABAT
+ ******************************/
 #ifndef __DEPART_H
 #define __DEPART_H
 #include <iostream>
