@@ -8,4 +8,5 @@ doc/html
 ./doc/html/*
 *.o
 ./*.o
+.vscode/*
 
