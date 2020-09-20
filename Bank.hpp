@@ -75,6 +75,16 @@ public:
      */
     void addWaitingTime(double);
 
+    /**
+     * get waiting time to the actual current time of the simulationn
+     * @param t time to add
+     */
+    std::vector<double> getWaitingTime();
+
+    /**
+     * display statistics of simulation
+     * @param t time to add
+     */
     void displayStats();
 };
 

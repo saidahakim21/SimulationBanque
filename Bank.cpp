@@ -60,3 +60,8 @@ Queue* Bank::getQueue() {
 void Bank::addWaitingTime(double t) {
     waitingTimes.push_back(t);
 }
+
+std::vector<double> Bank::getWaitingTime(){
+    return waitingTimes; 
+}
+
