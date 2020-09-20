@@ -6,12 +6,12 @@
 #include <vector>
 
 #include "Cashier.hpp"
-#include "ClientArrival.hpp"
-#include "DES.hpp"
-#include "WaitingList.hpp"
+#include "Arrival.hpp"
+#include "SED.hpp"
+#include "Queue.hpp"
 
 class Cashier;
-class WaitingList;
+class Queue;
 /**
  * A class for a bank illustration.
  */
@@ -27,7 +27,7 @@ protected:
     /// a pointer to the cashiers
     Cashier* cashiers;
     /// a poinnter to the waiting list
-    WaitingList* waitingList;
+    Queue* waitingList;
 
     /// a vector for saving simulations stats
     std::vector<double> waitingTimes;
@@ -65,9 +65,9 @@ public:
     Cashier* getCashiers();
     /**
      * getter for the waiting list
-     * @return a pointer to WaitingList object
+     * @return a pointer to Queue object
      */
-    WaitingList* getWaitingList();
+    Queue* getQueue();
 
     /**
      * adding a waiting time to the actual current time of the simulationn

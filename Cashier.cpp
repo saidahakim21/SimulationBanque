@@ -1,63 +1,69 @@
 #include "Cashier.hpp"
 
 using namespace std;
-
-Cashier::Cashier(): _currentClient(Client(-1)) {
-    _number = -1;
-    _averageServiceTime = -1;
-    _clientNb = 0;
-    _servingClient = false;
-    _occupationTime = 0;
+/**
+ * default constructor for class Cahsier
+ * initialise a new client .
+ */
+Cashier::Cashier(): currentClient(Client(-1)) {
+    number = -1;
+    averageServiceTime = -1;
+    clientNb = 0;
+    servingClient = false;
+    occupationTime = 0;
 }
 
-Cashier::Cashier(double averageTime, int n): _currentClient(Client(-1)) {
-    _number = n;
-    _averageServiceTime = averageTime;
-    _clientNb = 0;
-    _servingClient = false;
-    _occupationTime = 0;
+/**
+ * constructor for class Cashier
+ * @param averageTime average service time for this cashier
+ * @param n the number of the Cashier, used as an ID
+ */
+Cashier::Cashier(double averageTime, int n): currentClient(Client(-1)) {
+    number = n;
+    averageServiceTime = averageTime;
+    clientNb = 0;
+    servingClient = false;
+    occupationTime = 0;
 }
 
 Cashier::~Cashier() = default;
 
-double Cashier::averageServiceTime(){
-    return _averageServiceTime;
+double Cashier::getAverageServiceTime(){
+    return averageServiceTime;
 }
 
 int Cashier::getClientNb(){
-    return _clientNb;
+    return clientNb;
 }
 
 int Cashier::getNumber() {
-    return _number;
+    return number;
 }
 
 bool Cashier::isFree() {
-    return !_servingClient;
+    return !servingClient;
 }
 
 void Cashier::serve(Client c, Simulation* simulation) {
     
-    _clientNb ++;
-    _servingClient = true;
-    _currentClient = c;
-    double duration = Poisson::next(_averageServiceTime);
-    _occupationTime += duration;
+    clientNb ++;
+    servingClient = true;
+    currentClient = c;
+    double duration = Poisson::next(averageServiceTime);
+    occupationTime += duration;
     double eventTime =  simulation->getTime() + duration;
 
     // Add event to stop serving the client
-    simulation->addEvent(new Depart(eventTime, this, _number, c, simulation));
+    simulation->addEvent(new Depart(eventTime, this, number, c, simulation));
     
 }
 
 void Cashier::wait() {
-    
-    _servingClient = false;
-    _currentClient = Client(-1);
-    
+    servingClient = false;
+    currentClient = Client(-1);
 }
 
 double Cashier::getOccupationRate(double simulationDuration) {
     
-    return (_occupationTime/simulationDuration);
+    return (occupationTime/simulationDuration);
 }

@@ -12,19 +12,19 @@ class Simulation;
 
 class Cashier{
 protected:
-    int _number;
-    double _averageServiceTime;
-    Client _currentClient;
-    bool _servingClient;
-    int _clientNb;
-    double _occupationTime;
+    int number;
+    double averageServiceTime;
+    Client currentClient;
+    bool servingClient;
+    int clientNb;
+    double occupationTime;
 
 public:
     Cashier();
     explicit Cashier(double, int);
     ~Cashier();
 
-    double averageServiceTime();
+    double getAverageServiceTime();
     int getClientNb();
     int getNumber();
 

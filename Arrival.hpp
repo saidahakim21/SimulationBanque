@@ -1,9 +1,3 @@
-/*********************************
- *
- * Vincent Monot
- *
- *********************************/
-
 #ifndef __CLIENT_ARRIVAL_HPP
 #define __CLIENT_ARRIVAL_HPP
 
@@ -14,9 +8,13 @@
 #include "Client.hpp"
 #include "Event.hpp"
 
-class ClientArrival: public Event {
+/**
+ * subclass of Event
+ * a class that illustrate a new client arrival event.
+ */
+class Arrival: public Event {
 public:
-    explicit ClientArrival(double, Simulation*);
+    explicit Arrival(double, Simulation*);
     void process() override;
 };
 

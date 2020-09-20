@@ -12,8 +12,8 @@ class Cashier;
 class Depart: public Event {
 protected:
     int number;
-    Cashier* _cashier;
-    Client _client;
+    Cashier* cashier;
+    Client client;
 public:
     explicit Depart(double, Cashier*, int, Client, Simulation*);
     /**

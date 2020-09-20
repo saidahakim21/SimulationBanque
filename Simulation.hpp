@@ -8,17 +8,17 @@
 #include "Poisson.h"
 #include "Bank.hpp"
 #include "Event.hpp"
-#include "DES.hpp"
+#include "SED.hpp"
 
 class Bank;
 
-class Simulation: public DES {
+class Simulation: public SED {
     protected: 
-        double _expectedTime;
-        int _cashierNb;
-        double _averageArrivalTime;
-        double* _averageServiceTimes;
-        Bank* _bank;
+        double expectedTime;
+        int cashierNb;
+        double averageArrivalTime;
+        double* averageServiceTimes;
+        Bank* bank;
     public:
         //Simulation();
         explicit Simulation(int, double, double, double*);

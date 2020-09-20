@@ -1,4 +1,4 @@
-#include "ClientArrival.hpp"
+#include "Arrival.hpp"
 
 using namespace std;
 
@@ -6,20 +6,22 @@ using namespace std;
  * @param time
  * @param simulation
  */
- ClientArrival::ClientArrival(double time, Simulation* simulation): Event(time,simulation) {}
+ Arrival::Arrival(double time, Simulation* simulation): Event(time,simulation) {}
 
-/* Process of the client arrival event */
-void ClientArrival::process() {
+/**
+ * process the Event, override of superclass methode
+ */
+ void Arrival::process() {
     
     // Create client (using average time)
     Client client(time);
 
-    Bank* bank = _simulation->getBank(); 
+    Bank* bank = simulation->getBank();
 
     Cashier* cashier = bank->freeCashier();
     // If there isn't any free cashier, add client to the queue
     if(cashier == nullptr) {
-        WaitingList* wl = bank->getWaitingList();
+        Queue* wl = bank->getQueue();
         wl->add(client);
         cout << "New client waits at line " << wl->getNumber() << endl;
     }
@@ -29,6 +31,6 @@ void ClientArrival::process() {
         bank->addWaitingTime(0);
 
         cout << "New client served by " << cashier->getNumber() << endl;
-        cashier->serve(client, _simulation); 
+        cashier->serve(client, simulation);
     }    
 }

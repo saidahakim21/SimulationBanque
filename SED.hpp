@@ -1,5 +1,5 @@
-#ifndef __DES_HPP
-#define __DES_HPP
+#ifndef __SED_HPP
+#define __SED_HPP
 
 #include <iostream>
 #include <set>
@@ -18,16 +18,16 @@ struct EventComp {
     }
 };
 
-class DES {
+class SED {
 protected:
-    double _time;
+    double time;
 
-    set<Event*, EventComp> _events;
-    set<Event*, EventComp>::iterator _eventIterator;
+    set<Event*, EventComp> events;
+    set<Event*, EventComp>::iterator eventIterator;
 
 public:
-    explicit DES(double);
-    virtual ~DES();
+    explicit SED(double);
+    virtual ~SED();
 
     virtual void run();
     void addEvent(Event*);

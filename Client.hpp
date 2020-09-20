@@ -1,4 +1,3 @@
-
 #ifndef __CLIENT_HPP
 #define __CLIENT_HPP
 
@@ -12,7 +11,6 @@ protected:
     double arrivalTime;
 public:
     explicit Client(double);
-
     double getArrivalTime();
 };
 

@@ -9,25 +9,25 @@
 
 class Client;
 
-class WaitingList{
+class Queue{
 protected:
     int number;
-    int _currClients;
-    int _maxClients;
+    int currClients;
+    int maxClients;
 
-    double _lastModifTime;
-    double _timeClientSum;
+    double lastModifTime;
+    double timeClientSum;
 
     Bank* bank;
 
-    std::deque<Client> _clientList;
+    std::deque<Client> clientList;
 
     void addToAverage();
 
 public:
-    WaitingList();
-    explicit WaitingList(Bank*);
-    ~WaitingList();
+    Queue();
+    explicit Queue(Bank*);
+    ~Queue();
 
     void add(Client);
     bool isEmpty();

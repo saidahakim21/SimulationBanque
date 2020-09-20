@@ -7,13 +7,13 @@
 - time      time of the execution of the event
 - simulation      pointer to the simulaiton
 */
-Event::Event(double t, Simulation* simulation) {
+Event::Event(double t, Simulation* s) {
     time = t;
-    _simulation= simulation; 
+    simulation= s;
 }
 
 /* Process of the event
-Overridden by ClientArrival & Depart
+Overridden by Arrival & Depart
 */
 void Event::process() {
 }

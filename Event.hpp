@@ -11,7 +11,7 @@ class Simulation;
 class Event {
 protected:
     double time;
-    Simulation* _simulation;     
+    Simulation* simulation;
 
 public:
     explicit Event(double, Simulation*);

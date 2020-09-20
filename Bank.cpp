@@ -4,7 +4,6 @@ using namespace std;
 
 /**
  * Constructor for Bank class
- * @param start starting time of the simulaiton
  * @param eT estimated time for the simulation duration
  * @param nbCashier number of cashier in the bank
  * @param averageAT average time till next client arrival
@@ -16,7 +15,7 @@ Bank::Bank(double eT, int nbCashier, double averageAT, double* averageST){
     averageArrivalTime = averageAT;
 
     cashiers = new Cashier[cashierNb];
-    waitingList = new WaitingList(this);
+    waitingList = new Queue(this);
     for(int i=0 ; i<cashierNb ; i++) {
         cashiers[i] = Cashier(averageST[i], i);
     }
@@ -54,7 +53,7 @@ Cashier* Bank::getCashiers() {
     return cashiers;
 }
 
-WaitingList* Bank::getWaitingList() {
+Queue* Bank::getQueue() {
     return waitingList;
 }
 
