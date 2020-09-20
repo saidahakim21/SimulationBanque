@@ -89,16 +89,16 @@ void Simulation::displayStatistics() {
         cout << cashiers[i].getClientNb() << " ";
     }
 
-    cout << "] clients have been served during the simulation << endl;
-    cout << "Wich make " << bank->waitingTimes.size() << " clients served in total" << endl;
+    cout << "] clients have been served during the simulation "<< endl;
+    cout << "Wich make " <<  bank->getWaitingTime().size() << " clients served in total" << endl;
 
     cout << "The average waiting time for clients :  ";
     double sum = 0;
-    for (vector<double>::iterator it = waitingTimes.begin() ; it != waitingTimes.end(); ++it) {
+    for (vector<double>::iterator it = bank->getWaitingTime().begin() ; it != bank->getWaitingTime().end(); ++it) {
         sum += *it;
     }
-    cout << (sum/waitingTimes.size()) << " unites de temps" << endl << endl;
-*/
+    cout << (sum/bank->getWaitingTime().size()) << " unites de temps" << endl << endl;
+
     // Queue stats
     
     cout << "The Maximum Queue line size is : [ ";

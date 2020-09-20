@@ -4,8 +4,10 @@ using namespace std;
 
 /**
  * Constructor with parameters:
- * @param t     time of the event
- * @param b pointer to the event
+ * @param time     time of the event
+ * @param ca pointer to Cashier that released the client
+ * @param cl Client object
+ * @param sim Simulation object
  */
 Depart::Depart(double time, Cashier* ca, int n, Client cl, Simulation* sim): Event(time), cashier(ca), client(cl) {
     number = n;
